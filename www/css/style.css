@@ -1,22 +1,57 @@
 /* Empty. Add your own CSS if you like */
+@font-face {
+    font-family: "DK";
+    src: url('../font/DKLemonYellowSun.otf');
+}
+
+@font-face {
+    font-family: "Strawberry";
+    src: url('../font/StrawberryMuffinsDemo.ttf');
+}
+
 #boutons {
 	text-align: center;
 }
 
 .vert {
-	margin-top: 25%;
 	height: 470px;
 	width: 27%;
 }
 
 .jaune {
-	margin-top: 25%;
 	height: 470px;
 	width: 27%;
 }
 
 .rouge {
-	margin-top: 25%;
 	height: 470px;
 	width: 27%;
+}
+
+#title_home {
+	font-family: "DK", Arial, serif;
+	font-size: 4em;
+	text-align: center;
+	padding-top: 20%;
+}
+
+.title {
+	color: white;
+	font-family: "DK", Arial, serif;
+}
+
+
+/*////////////////// PAGE RECHERCHE ////////////////////*/
+
+.bar-vert {
+	background-color: #71AF04;
+}
+
+.rech-text {
+	font-family: "Strawberry", Arial, serif;
+	font-size: 1.5em;
+}
+
+.espace {
+	margin-top: 1.5%;
 }

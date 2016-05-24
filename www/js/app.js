@@ -67,6 +67,15 @@ angular.module('starter', ['ionic'])
     templateUrl: 'templates/contact.html'        
   })
 
+    .state('single-rec', {
+    url: '/single-rec',
+    templateUrl: 'templates/single-rec.html'        
+  })
+
+    .state('liste-tag', {
+    url: '/liste-tag',
+    templateUrl: 'templates/liste-tag.html'        
+  })
 
    $urlRouterProvider.otherwise('');
 
