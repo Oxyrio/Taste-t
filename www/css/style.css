@@ -40,6 +40,14 @@
 	font-family: "DK", Arial, serif;
 }
 
+.style-lien {
+	color: black;
+}
+
+.bar-rouge {
+	background-color: #F93B07;
+}
+
 
 /*////////////////// PAGE RECHERCHE ////////////////////*/
 
@@ -54,4 +62,44 @@
 
 .espace {
 	margin-top: 1.5%;
+}
+
+
+
+
+
+
+
+/*/////////////////// PAGE LISTE RECETTE ///////////////////*/
+
+.bar-jaune {
+	background-color: #FFB90D;
+}
+
+
+
+
+
+
+
+
+
+/*/////////////////// PAGE CONTACT ///////////////////////*/
+
+.cont_text {
+	text-align: justify;
+}
+
+.gros_cont {
+	font-family: "DK", Arial, serif;
+	text-align: center;
+}
+
+.strong_cont {
+	color: #71AF04;
+}
+
+.bouton_cont {
+	text-align: center;
+	color: white;
 }

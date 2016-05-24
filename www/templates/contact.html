@@ -1,11 +1,36 @@
 <ion-view title="contact">
 
+<div class="bar bar-header bar-vert">
+  <h1 class="title">TASTE!T</h1>
+</div>
 
       <ion-content>
 
+        <h1 class="bouche-trou">Coucou :*</h1>
+        <h1 class="gros_cont padding">Contactez nous !</h1>
 
-        <h1>CONTACT</h1>
+        <p class="cont_text padding">Vous souhaitez nous faire part d'une <strong class="strong_cont">suggestion</strong> suceptible d'améliorer l'application, d'un <strong class="strong_cont">bug</strong> que vous avez rencontré ou tout simplement d'un <strong class="strong_cont">message d'amour</strong> au chocolat ?
+          <br>
+          Vous êtes au <strong class="strong_cont">bon endroit !</strong></p>
 
+
+          <div class="list list-inset">
+            <label class="item item-input">
+              <input type="text" placeholder="Objet du message" required>
+            </label>
+            <label class="item item-input">
+              <input type="text" placeholder="Votre email (facultatif)">
+            </label>
+            <label class="item item-input">
+              <textarea placeholder="Votre message..." required></textarea>
+            </label>
+
+            <div class="padding bouton_cont ">
+              <button class="button button-outline button-balanced">
+                Envoyer
+              </button>
+            </div>
+          </div>
 
       </ion-content>
 
@@ -28,7 +53,7 @@
           <i class="icon ion-ios-star"></i>
           Tendances
         </a>
-        <a class="tab-item assertive active" ui-sref="contact">
+        <a class="tab-item balanced active" ui-sref="contact">
           <i class="icon ion-ios-email"></i>
           Contact
         </a>
