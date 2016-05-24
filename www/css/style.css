@@ -1,1 +1,22 @@
 /* Empty. Add your own CSS if you like */
+#boutons {
+	text-align: center;
+}
+
+.vert {
+	margin-top: 25%;
+	height: 470px;
+	width: 27%;
+}
+
+.jaune {
+	margin-top: 25%;
+	height: 470px;
+	width: 27%;
+}
+
+.rouge {
+	margin-top: 25%;
+	height: 470px;
+	width: 27%;
+}

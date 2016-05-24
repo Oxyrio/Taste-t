@@ -37,6 +37,35 @@ angular.module('starter', ['ionic'])
     templateUrl: 'templates/home.html'        
   })
 
+    .state('hasard', {
+    url: '/hasard',
+    templateUrl: 'templates/hasard.html'        
+  })
+
+    .state('liste', {
+    url: '/liste',
+    templateUrl: 'templates/liste.html'        
+  })
+
+    .state('bases', {
+    url: '/bases',
+    templateUrl: 'templates/bases.html'        
+  })
+
+    .state('rech', {
+    url: '/rech',
+    templateUrl: 'templates/rech.html'        
+  })
+
+    .state('tend', {
+    url: '/tend',
+    templateUrl: 'templates/tend.html'        
+  })
+
+    .state('contact', {
+    url: '/contact',
+    templateUrl: 'templates/contact.html'        
+  })
 
 
    $urlRouterProvider.otherwise('');
