@@ -85,7 +85,7 @@ exemple.run(function($ionicPlatform) {
   });
 
 
-   $urlRouterProvider.otherwise('');
+   $urlRouterProvider.otherwise('/login');
 
 
 })
@@ -98,7 +98,7 @@ exemple.run(function($ionicPlatform) {
       email: username,
       password: password
     }).then(function(authData) {
-      $location.path("/todo");
+      $location.path("/home");
     }).catch(function(error) {
       console.error("ERROR: " + error);
     });
@@ -112,7 +112,7 @@ exemple.run(function($ionicPlatform) {
         password: password
       });
     }).then(function(authData) {
-      $location.path("/todo");
+      $location.path("/home");
     }).catch(function(error) {
       console.error("ERROR " + error);
     });

@@ -48,6 +48,17 @@
 	background-color: #F93B07;
 }
 
+.foot {
+	font-size: 0.5em;
+}
+
+.img-rs {
+	width: 15%;
+}
+
+.container-rs {
+	text-align: center;
+}
 
 /*////////////////// PAGE RECHERCHE ////////////////////*/
 
@@ -102,4 +113,15 @@
 .bouton_cont {
 	text-align: center;
 	color: white;
+}
+
+
+
+
+
+/*//////////////// LOGIN //////////////////*/
+
+.font_login {
+	background-image: url(../img/fruitfond2.jpg);
+	background-size: contain;
 }

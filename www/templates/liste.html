@@ -1,4 +1,4 @@
-<ion-view title="liste">
+<ion-view title="liste" ng-init="list()">
 
 <div class="bar bar-header bar-jaune">
   <h1 class="title">TASTE!T</h1>
@@ -9,6 +9,12 @@
 
         <h1 class="bouche-trou">Coucou :*</h1>
         <h1>LISTE</h1>
+
+        <div class="list">
+            <div ng-repeat="todo in data.todos" class="item">
+                {{todo.title}}
+            </div>
+        </div>
 
 
       </ion-content>
