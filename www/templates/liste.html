@@ -1,17 +1,21 @@
-<ion-view title="liste">
+<ion-view title="Liste" ng-init="list()">
 
 <div class="bar bar-header bar-jaune">
   <h1 class="title">TASTE!T</h1>
+  <button class="button button-icon ion-plus" ng-click="addItem()"></button>
 </div>
 
-
-      <ion-content>
-
-        <h1 class="bouche-trou">Coucou :*</h1>
-        <h1>LISTE</h1>
-
-
-      </ion-content>
+    <ion-content class="margin-liste-top" ng-controller="ListCtrl">
+      <ion-list>
+        <h1 class="title">Items</h1>
+        <ion-item ng-repeat="item in items">
+          {{item.name}}
+          <ion-option-button class="button-royal" ng-click="purchaseItem(item)">
+            <i class="icon ion-checkmark"></i>
+          </ion-option-button>
+        </ion-item>
+      </ion-list>
+    </ion-content>
 
       <!-- NE PAS TOUCHER LE MENU CI-DESSOUS -->
 
