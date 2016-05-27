@@ -3,9 +3,11 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('starter', ['ionic'])
+var exemple = angular.module('starter', ['ionic', 'firebase']);
 
-.run(function($ionicPlatform) {
+var fb = null;
+
+exemple.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
       // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -20,6 +22,9 @@ angular.module('starter', ['ionic'])
     if(window.StatusBar) {
       StatusBar.styleDefault();
     }
+
+    fb = new Firebase("https://tasteit.firebaseio.com/");
+
   });
 })
 
@@ -67,17 +72,78 @@ angular.module('starter', ['ionic'])
     templateUrl: 'templates/contact.html'        
   })
 
-    .state('single-rec', {
-    url: '/single-rec',
-    templateUrl: 'templates/single-rec.html'        
+  .state('login', {
+    url: '/login',
+    templateUrl: 'templates/login.html',
+    controller: 'LoginController'
   })
 
-    .state('liste-tag', {
-    url: '/liste-tag',
-    templateUrl: 'templates/liste-tag.html'        
-  })
+  .state('todo', {
+    url: '/todo',
+    templateUrl: 'templates/todo.html',
+    controller: 'TodoController'
+  });
+
 
    $urlRouterProvider.otherwise('');
 
+
+})
+
+.controller("LoginController", function($scope, $firebaseAuth, $location) {
+
+  $scope.login = function(username, password) {
+    var fbAuth = $firebaseAuth(fb);
+    fbAuth.$authWithPassword({
+      email: username,
+      password: password
+    }).then(function(authData) {
+      $location.path("/todo");
+    }).catch(function(error) {
+      console.error("ERROR: " + error);
+    });
+  };
+
+  $scope.register = function(username, password) {
+    var fbAuth = $firebaseAuth(fb);
+    fbAuth.$createUser({email: username, password: password}).then(function() {
+      return fbAuth.$authWithPassword({
+        email: username,
+        password: password
+      });
+    }).then(function(authData) {
+      $location.path("/todo");
+    }).catch(function(error) {
+      console.error("ERROR " + error);
+    });
+  }
+
+})
+
+.controller("TodoController", function($scope, $firebaseObject, $ionicPopup) {
+   $scope.list = function() {
+     var fbAuth = fb.getAuth();
+     if(fbAuth) {
+       var syncObject = $firebaseObject(fb.child("users/" + fbAuth.uid));
+       syncObject.$bindTo($scope, "data");
+     }
+   };
+
+  $scope.create = function() {
+    $ionicPopup.prompt({
+          title: 'Enter a new TODO item',
+          inputType: 'text'
+        })
+        .then(function(result) {
+          if(result !== "") {
+            if($scope.data.hasOwnProperty("todos") !== true) {
+              $scope.data.todos = [];
+            }
+            $scope.data.todos.push({title: result});
+          } else {
+            console.log("Action not completed");
+          }
+        });
+  }
 
 });
