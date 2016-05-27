@@ -39,7 +39,7 @@ exemple.run(function($ionicPlatform) {
   // setup an abstract state for the tabs directive
     .state('home', {
     url: '/home',
-    templateUrl: 'templates/home.html'        
+    templateUrl: 'templates/home.html'
   })
 
     .state('hasard', {
@@ -49,7 +49,8 @@ exemple.run(function($ionicPlatform) {
 
     .state('liste', {
     url: '/liste',
-    templateUrl: 'templates/liste.html'        
+    templateUrl: 'templates/liste.html',
+    controller: 'ListCtrl'
   })
 
     .state('bases', {
@@ -100,7 +101,7 @@ exemple.run(function($ionicPlatform) {
     }).then(function(authData) {
       $location.path("/home");
     }).catch(function(error) {
-      console.error("ERROR: " + error);
+      alert("ERROR: " + error);
     });
   };
 
@@ -114,36 +115,27 @@ exemple.run(function($ionicPlatform) {
     }).then(function(authData) {
       $location.path("/home");
     }).catch(function(error) {
-      console.error("ERROR " + error);
+      alert("ERROR " + error);
     });
   }
 
 })
 
-.controller("TodoController", function($scope, $firebaseObject, $ionicPopup) {
-   $scope.list = function() {
-     var fbAuth = fb.getAuth();
-     if(fbAuth) {
-       var syncObject = $firebaseObject(fb.child("users/" + fbAuth.uid));
-       syncObject.$bindTo($scope, "data");
-     }
-   };
 
-  $scope.create = function() {
-    $ionicPopup.prompt({
-          title: 'Enter a new TODO item',
-          inputType: 'text'
-        })
-        .then(function(result) {
-          if(result !== "") {
-            if($scope.data.hasOwnProperty("todos") !== true) {
-              $scope.data.todos = [];
-            }
-            $scope.data.todos.push({title: result});
-          } else {
-            console.log("Action not completed");
-          }
-        });
-  }
+.factory('Items', ['$firebaseArray', function($firebaseArray) {
+  var itemsRef = new Firebase('https://tasteit.firebaseio.com/');
+  return $firebaseArray(itemsRef);
+}])
 
+.controller('ListCtrl', function($scope, Items) {
+   $scope.items = Items;
+
+  $scope.addItem = function() {
+    var name = prompt('Ecrivez votre spoil !!');
+    if (name) {
+      $scope.items.$add({
+        'name': name
+      });
+    }
+  };
 });
