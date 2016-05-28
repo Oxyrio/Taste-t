@@ -16,16 +16,31 @@
 .vert {
 	height: 470px;
 	width: 27%;
+	background-image: url(../img/fond-has.jpg);
+	background-size: cover;
+	color: white;
+	font-family: "DK", Arial, serif;
+	font-size: 2em;
 }
 
 .jaune {
 	height: 470px;
 	width: 27%;
+	background-image: url(../img/fond-liste.jpg);
+	background-size: cover;
+	color: white;
+	font-family: "DK", Arial, serif;
+	font-size: 2em;
 }
 
 .rouge {
 	height: 470px;
 	width: 27%;
+	background-image: url(../img/fond-base.jpg);
+	background-size: cover;
+	color: white;
+	font-family: "DK", Arial, serif;
+	font-size: 2em;
 }
 
 #title_home {
@@ -33,6 +48,14 @@
 	font-size: 4em;
 	text-align: center;
 	padding-top: 20%;
+}
+
+#title_home_one {
+	font-family: "DK", Arial, serif;
+	font-size: 5em;
+	text-align: center;
+	padding-top: 17%;
+	padding-bottom: 5%;
 }
 
 .title {
@@ -58,6 +81,10 @@
 
 .container-rs {
 	text-align: center;
+}
+
+.img-btn-princ {
+	width: 100%;
 }
 
 /*////////////////// PAGE RECHERCHE ////////////////////*/
