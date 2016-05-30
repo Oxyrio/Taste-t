@@ -8,13 +8,30 @@
     <ion-content class="margin-liste-top" ng-controller="ListCtrl">
       <ion-list>
         <h1 class="title">Items</h1>
-        <ion-item ng-repeat="item in items">
+
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="search" placeholder="search" ng-model="searchQuery"/>
+        </label>
+
+        <ion-item ng-repeat="item in items | filter:searchQuery">
           {{item.name}}
           <ion-option-button class="button-royal" ng-click="purchaseItem(item)">
             <i class="icon ion-checkmark"></i>
           </ion-option-button>
         </ion-item>
       </ion-list>
+
+      <!--<label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="search" placeholder="search" ng-model="searchQuery"/>
+      </label>
+
+      <ion-list>
+        <ion-item ng-repeat="item in items | filter=searchQuery"></ion-item>
+
+      </ion-list>-->
+
     </ion-content>
 
 
