@@ -1,10 +1,62 @@
 <ion-view title="single-rec">
 
+<div class="bar bar-header bar-jaune">
+    <button class="button icon ion-navicon burger"></button>
+    <h1 class="title">TASTE!T</h1>
+  </div>
+
 
       <ion-content>
 
+        <h3>Accueil > Recettes > <u>Recettes du Jour</u></h3>
 
-        <h1>AFFICHAGE D'UNE RECETTE</h1>
+        <h1 class="yellow">{Titre recette}</h1>
+
+        <img src="../img/croque.jpg" class="croque-recette">
+
+        <i class="icon ion-star mid padding"><hr></i>
+
+        <p class="description">{ Titre détaillé }</p>
+
+        <i class="icon ion-clock mid padding"><hr class="second"></i>
+
+        <div class="padding">
+
+        <p class="temps"><u>Temps de préparation :</u><strong> { temps 1 }</strong>
+          <br>
+            <u>Temps de cuisson :</u><strong> { temps 2 }</strong></p>
+
+        <p class="ingredients">
+
+          <u>Ingrédients pour { nb pers } personne(s)</u> : <br>
+          
+          - { liste ingrédients }<br>
+          - ...
+
+          <!-- ici faire une sorte de foreach ingrédients, retour à la ligne -->
+
+        </p>
+
+        <p class="prepa"><u>Préparation de la recette</u> :
+          <br><br>
+
+          { description recette }
+          
+        </p>
+
+        <p class="footerr"> <img src="../img/rate.png" class="rate"><strong>{ nb votes } votes</strong></p>  <p class="footer"><u>Difficulté</u> : <strong>{ diff }</strong></p>
+
+        </div>
+
+        <div style="text-align:center;">
+          <button class="button button-energized commentaire">
+          Commentaires ( {nb comments} ) 
+          </button><!-- Peut être optionnel -->
+        </div>
+
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
+        <p>&nbsp;</p>
 
 
       </ion-content>

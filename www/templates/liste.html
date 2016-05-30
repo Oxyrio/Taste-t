@@ -6,15 +6,18 @@
 </div>
 
     <ion-content class="margin-liste-top" ng-controller="ListCtrl">
+
+
       <ion-list>
         <h1 class="title">Items</h1>
-        <ion-item ng-repeat="item in items">
+
+        <ion-item ng-repeat="item in items" ui-sref="single-rec">
           {{item.name}}
-          <ion-option-button class="button-royal" ng-click="purchaseItem(item)">
-            <i class="icon ion-checkmark"></i>
-          </ion-option-button>
         </ion-item>
+
       </ion-list>
+
+      
     </ion-content>
 
 

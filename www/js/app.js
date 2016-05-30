@@ -83,7 +83,17 @@ exemple.run(function($ionicPlatform) {
     url: '/todo',
     templateUrl: 'templates/todo.html',
     controller: 'TodoController'
-  });
+  })
+
+  .state('liste-tag', {
+    url: '/liste-tag',
+    templateUrl: 'templates/liste-tag.html',
+  })
+
+  .state('single-rec', {
+    url: '/single-rec',
+    templateUrl: 'templates/single-rec.html',
+  })
 
 
    $urlRouterProvider.otherwise('/login');
@@ -131,7 +141,7 @@ exemple.run(function($ionicPlatform) {
    $scope.items = Items;
 
   $scope.addItem = function() {
-    var name = prompt('Ecrivez votre spoil !!');
+    var name = prompt('Ajoutez votre recette !!');
     if (name) {
       $scope.items.$add({
         'name': name
