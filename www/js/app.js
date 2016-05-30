@@ -139,3 +139,5 @@ exemple.run(function($ionicPlatform) {
     }
   };
 });
+
+

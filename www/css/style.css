@@ -87,6 +87,12 @@
 	width: 100%;
 }
 
+.text-rs {
+	text-align: center;
+	font-family: "DK", Arial, serif;
+	font-size: 1.4em;
+}
+
 /*////////////////// PAGE RECHERCHE ////////////////////*/
 
 .bar-vert {
