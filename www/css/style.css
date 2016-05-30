@@ -127,3 +127,101 @@
 	background-image: url(../img/fruitfond2.jpg);
 	background-size: contain;
 }
+
+
+/*/////////////////// PAGE HASARD ///////////////////////*/
+
+.burger{
+	color: white;
+	background-color: #ffb90d;
+}
+
+h3{
+	font-size: 15px;
+	font-family: DK;
+	padding-top: 50px;
+	font-weight: 500;
+	margin-left: 5%;
+
+}
+
+.croque-recette{
+	width: 80%;
+	height: 150px;
+	margin-left: 10%;
+	margin-top: 5%;
+}
+
+.yellow{
+	color: #ffb90d;
+	text-align: center;
+	font-family: "DK Lemon Yellow Sun";
+}
+
+.mid {
+	margin-left: 160px;
+	color: #ffb90d;
+}
+
+hr{
+margin-bottom: -15px;
+	margin-top: -10px;
+}
+.second{
+	margin-bottom: -15px;
+}
+.description{
+	font-family: DK;
+	font-size: 15px;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.temps{
+	font-family: DK;
+	font-size: 15px;
+	padding-top: 15px;
+}
+
+u{
+	color: #ffb90d;
+}
+.ingredients{
+	font-family: DK;
+	font-size: 15px;
+	padding-top: 15px;
+}
+
+.prepa{
+	font-family: DK;
+	font-size: 15px;
+
+}
+
+.footerr{
+	font-family: DK;
+	font-size: 15px;
+	float: left;
+	margin-left: 5%;
+	padding-top: 2%;
+}
+
+.footer{
+
+	font-family: DK;
+	font-size: 15px;
+	float: right;
+	margin-right: 5%;
+	padding-top: 2%;
+
+}
+.rate{
+	width: 25%;
+}
+
+.commentaire{
+	border-radius: 15px;
+	text-align: center;
+	margin-left: 25%;
+	margin-top: 5%;
+}
