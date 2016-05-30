@@ -11,15 +11,14 @@
       <ion-list>
         <h1 class="title">Items</h1>
 
-
-        <ion-item ng-repeat="item in items" ui-sref="single-rec">
+               
 
         <label class="item item-input">
           <i class="icon ion-search placeholder-icon"></i>
           <input type="search" placeholder="search" ng-model="searchQuery"/>
         </label>
 
-        <ion-item ng-repeat="item in items | filter:searchQuery">
+        <ion-item ui-sref="single-rec" ng-repeat="item in items | filter:searchQuery">
           {{item.name}}
         </ion-item>
 
