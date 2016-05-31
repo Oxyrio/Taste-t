@@ -1,0 +1,144 @@
+<ion-view title="add-recipe" ng-init="list()">
+
+<div class="bar bar-header bar-jaune">
+  <h1 class="title">TASTE!T</h1>
+</div>
+
+    <ion-content>
+
+    <p>&nbsp;<br>
+      &nbsp;</p>
+
+    <div class="list">
+      <label class="item item-input">
+        <input type="text" placeholder="Titre de la recette">
+      </label>
+      
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Durée (en min)
+          </div>
+          <select>
+            <option selected>- de 5</option>
+            <option>5 - 10</option>
+            <option>10 - 30</option>
+            <option>+ de 30</option>
+          </select>
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Difficulté
+          </div>
+          <select>
+            <option selected>Facile</option>
+            <option>Moyen</option>
+            <option>Difficile</option>
+          </select>
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Sucré ou Salé ?
+          </div>
+          <select>
+            <option selected>Sucré</option>
+            <option>Salé</option>
+          </select>
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Type de plat
+          </div>
+          <select>
+            <option selected>Appéritif</option>
+            <option>Entrée</option>
+            <option>Plat</option>
+            <option>Soupe</option>
+            <option>Dessert</option>
+            <option>Cocktail</option>
+          </select>
+        </label>
+
+      <!--  <label class="itme item-input">
+          <div class="input-label">
+            Fruits et/ou Légumes ?
+          </div>
+        </label>
+
+        <div class="choix-flr">
+      
+        <ion-checkbox ng-model="filter.blue">Fruits</ion-checkbox>
+        <ion-checkbox ng-model="filter.yellow">Légumes</ion-checkbox>
+        <ion-checkbox ng-model="filter.pink">Aucun</ion-checkbox>
+
+        </div> -->
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Grosse ou petite faim ?
+          </div>
+          <select>
+            <option selected>Grosse faim</option>
+            <option>Petite faim</option>
+          </select>
+        </label>
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Autres ?
+          </div>
+          <select>
+            <option selected>Non</option>
+            <option>Sans alcool</option>
+            <option>Orientale</option>
+          </select>
+        </label>
+
+
+      <label class="item item-input">
+        <textarea placeholder="Description de la recette"></textarea>
+      </label>
+    </div>
+
+    <div style="text-align:center;">
+      <button class="button button-energized button-outline" ng-click="addItem()">Soumettre ma recette</button>
+    </div>  
+
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+
+
+    </ion-content>
+
+
+      <!-- NE PAS TOUCHER LE MENU CI-DESSOUS -->
+
+      <div class="tabs tabs-icon-top">
+        <a class="tab-item" ui-sref="rech">
+          <i class="icon ion-ios-search"></i>
+          Recherche
+        </a>
+        <a class="tab-item energized active" ui-sref="liste">
+          <i class="icon ion-ios-nutrition"></i>
+          Recettes
+        </a>
+        <a class="tab-item" ui-sref="home">
+          <i class="icon ion-ios-home"></i>
+          Accueil
+        </a>
+        <a class="tab-item" ui-sref="tend">
+          <i class="icon ion-ios-star"></i>
+          Tendances
+        </a>
+        <a class="tab-item" ui-sref="contact">
+          <i class="icon ion-ios-email"></i>
+          Contact
+        </a>
+
+      </div>
+
+
+</ion-view>

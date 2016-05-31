@@ -92,7 +92,13 @@ exemple.run(function($ionicPlatform) {
 
   .state('single-rec', {
     url: '/single-rec',
-    templateUrl: 'templates/single-rec.html',
+    templateUrl: 'templates/single-rec.html'
+  })
+
+  .state('add-recipe', {
+    url: '/add-recipe',
+    templateUrl: 'templates/add-recipe.html'
+
   })
 
 
