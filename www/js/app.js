@@ -148,6 +148,8 @@ exemple.run(function($ionicPlatform) {
       });
     }
   };
-});
+})
+
+
 
 
