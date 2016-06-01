@@ -22,6 +22,16 @@
 
             <div class="container-rs">
 
+                <div ng-app="sampleApp" ng-controller="SampleCtrl" style="padding-top: 20%">
+                    <div ng-show="authData">
+                        <p>Hello, {{ authData.facebook.displayName }}</p>
+                        <button ng-click="auth.$unauth()" ui-sref="login">Logout</button>
+                    </div>
+                    <div ng-hide="authData">
+                        <p>Welcome, please log in.</p>
+                        <button ng-click="auth.$authWithOAuthPopup('facebook')" ui-sref="home">Login With Facebook</button>
+                    </div>
+                </div>
                 
                 <img class="img-rs" src="../img/fb.png" alt="fb" href="">
                 
