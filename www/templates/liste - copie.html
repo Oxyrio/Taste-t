@@ -1,0 +1,60 @@
+<ion-view title="liste" ng-init="list()">
+
+<div class="bar bar-header bar-jaune">
+  <h1 class="title">TASTE!T</h1>
+  <button class="button button-icon ion-plus" ng-click="addItem()"></button>
+</div>
+
+    <ion-content class="margin-liste-top" ng-controller="ListCtrl">
+
+
+      <ion-list>
+        <h1 class="title">Items</h1>
+
+               
+
+        <label class="item item-input">
+          <i class="icon ion-search placeholder-icon"></i>
+          <input type="search" placeholder="search" ng-model="searchQuery"/>
+        </label>
+
+        <ion-item ui-sref="single-rec" ng-repeat="item in items | filter:searchQuery">
+          {{item.name}}
+        </ion-item>
+
+      </ion-list>
+
+      <p>&nbsp;</p>
+
+
+    </ion-content>
+
+
+      <!-- NE PAS TOUCHER LE MENU CI-DESSOUS -->
+
+      <div class="tabs tabs-icon-top">
+        <a class="tab-item" ui-sref="rech">
+          <i class="icon ion-ios-search"></i>
+          Recherche
+        </a>
+        <a class="tab-item energized active" ui-sref="liste">
+          <i class="icon ion-ios-nutrition"></i>
+          Recettes
+        </a>
+        <a class="tab-item" ui-sref="home">
+          <i class="icon ion-ios-home"></i>
+          Accueil
+        </a>
+        <a class="tab-item" ui-sref="tend">
+          <i class="icon ion-ios-star"></i>
+          Tendances
+        </a>
+        <a class="tab-item" ui-sref="contact">
+          <i class="icon ion-ios-email"></i>
+          Contact
+        </a>
+
+      </div>
+
+
+</ion-view>
