@@ -1,4 +1,4 @@
-<ion-view title="add-recipe" ng-init="list()">
+<ion-view title="add-recipe" ng-app="starter" ng-controller="AddRecipeController">
 
 <div class="bar bar-header bar-jaune">
   <h1 class="title">TASTE!T</h1>
@@ -9,7 +9,7 @@
     <p>&nbsp;<br>
       &nbsp;</p>
 
-    <div class="list">
+    <!-- <div class="list">
       <label class="item item-input">
         <input type="text" placeholder="Titre de la recette">
       </label>
@@ -61,7 +61,7 @@
           </select>
         </label>
 
-      <!--  <label class="itme item-input">
+       <label class="itme item-input">
           <div class="input-label">
             Fruits et/ou Légumes ?
           </div>
@@ -73,7 +73,7 @@
         <ion-checkbox ng-model="filter.yellow">Légumes</ion-checkbox>
         <ion-checkbox ng-model="filter.pink">Aucun</ion-checkbox>
 
-        </div> -->
+        </div> 
 
         <label class="item item-input item-select">
           <div class="input-label">
@@ -104,7 +104,39 @@
 
     <div style="text-align:center;">
       <button class="button button-energized button-outline" ng-click="addItem()">Soumettre ma recette</button>
-    </div>  
+    </div>  -->
+
+     <form ng-submit="addRecipe()">
+
+            <input ng-model="titre" placeholder="titre" /> <br><br>
+            <input ng-model="description" placeholder="description" /> <br><br>
+            <input ng-model="difficulte" placeholder="difficulte" /> <br><br>
+            <input ng-model="temps" placeholder="temps" /> <br><br>
+            <input ng-model="nbPersonne" placeholder="nbPersonne" /> <br><br>
+
+            <br><br>
+            <button type="submit">
+                Ajouter la recette
+            </button>
+
+        </form>
+
+        <!--<button class="button button-icon ion-plus" ng-click="addRecette()"/>-->
+
+
+    <ion-list>
+        <ion-item ng-repeat="recipe in recipes">
+            {{recipe.titre}} <br>
+
+            {{recipe.description}} <br>
+
+            {{recipe.difficulte}} <br>
+
+            {{recipe.temps}} <br>
+
+            {{recipe.nbPersonne}} <br>
+        </ion-item>
+    </ion-list>
 
     <p>&nbsp;</p>
     <p>&nbsp;</p>
@@ -121,7 +153,7 @@
           <i class="icon ion-ios-search"></i>
           Recherche
         </a>
-        <a class="tab-item energized active" ui-sref="liste">
+        <a class="tab-item energized" ui-sref="liste">
           <i class="icon ion-ios-nutrition"></i>
           Recettes
         </a>

@@ -98,9 +98,12 @@ exemple.run(function($ionicPlatform) {
   .state('add-recipe', {
     url: '/add-recipe',
     templateUrl: 'templates/add-recipe.html'
-
   })
 
+  .state('test-content', {
+    url: '/test-content',
+    templateUrl: 'templates/test-content.html'
+  })
 
    $urlRouterProvider.otherwise('/login');
 
@@ -156,6 +159,49 @@ exemple.run(function($ionicPlatform) {
   };
 })
 
+
+//AJOUTER DES RECETTES
+angular.module('starter').factory("recipes", function($firebaseArray) {
+    var itemsRef = new Firebase("https://tasteit.firebaseio.com/recipes");
+    return $firebaseArray(itemsRef);
+});
+
+//AJOUTER DES RECETTES
+angular.module('starter').controller("AddRecipeController", function($scope, Recipes) {
+
+    $scope.recipes = Recipes;
+
+    $scope.addRecipe = function() {
+        titre = this.titre;
+        description = this.description;
+        difficulte = this.difficulte;
+        temps = this.temps;
+        nbPersonne = this.nbPersonne;
+        var ingredient = [
+                "fraise",
+                "farine"
+            ]
+        for (var i=0; i< ingredient.length; i++){
+            i = ingredient[i];
+        }
+
+        $scope.recipes.$add({
+            "titre": titre,
+            "description": description,
+            "difficulte": difficulte,
+            "temps": temps,
+            "nbPersonne": nbPersonne,
+            "ingredient": ingredient
+        });
+
+    };
+});
+
+
+//AFFICHER LES RECETTES
+angular.module('SwaltyApp').controller('RecipeController', function($scope, Recipes){
+    $scope.recipes = Recipes;
+});
 
 
 
