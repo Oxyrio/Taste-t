@@ -50,7 +50,7 @@ exemple.run(function($ionicPlatform) {
     .state('liste', {
     url: '/liste',
     templateUrl: 'templates/liste.html',
-    controller: 'ListCtrl'
+    controller: 'AddRecetteCtrl'
   })
 
     .state('bases', {
@@ -87,7 +87,7 @@ exemple.run(function($ionicPlatform) {
 
   .state('liste-tag', {
     url: '/liste-tag',
-    templateUrl: 'templates/liste-tag.html',
+    templateUrl: 'templates/liste-tag.html'
   })
 
   .state('single-rec', {
@@ -97,12 +97,14 @@ exemple.run(function($ionicPlatform) {
 
   .state('add-recipe', {
     url: '/add-recipe',
-    templateUrl: 'templates/add-recipe.html'
+    templateUrl: 'templates/add-recipe.html',
+    controller: 'SampleCtrl'
   })
 
   .state('test-content', {
     url: '/test-content',
-    templateUrl: 'templates/test-content.html'
+    templateUrl: 'templates/test-content.html',
+    controller: 'AddRecetteCtrl'
   })
 
    $urlRouterProvider.otherwise('/login');
@@ -126,7 +128,10 @@ exemple.run(function($ionicPlatform) {
 
   $scope.register = function(username, password) {
     var fbAuth = $firebaseAuth(fb);
-    fbAuth.$createUser({email: username, password: password}).then(function() {
+    fbAuth.$createUser({
+      email: username,
+      password: password
+    }).then(function() {
       return fbAuth.$authWithPassword({
         email: username,
         password: password
@@ -136,9 +141,31 @@ exemple.run(function($ionicPlatform) {
     }).catch(function(error) {
       alert("ERROR " + error);
     });
-  }
+  };
 
 })
+
+    /* se connecter via Facebook */
+
+.factory("Auth", ["$firebaseAuth",
+  function($firebaseAuth) {
+    var ref = new Firebase('https://tasteit.firebaseio.com/');
+    return $firebaseAuth(ref);
+  }
+])
+
+.controller("SampleCtrl", ["$scope", "Auth",
+  function($scope, Auth) {
+    $scope.auth = Auth;
+
+    // any time auth status updates, add the user data to scope
+    $scope.auth.$onAuth(function(authData) {
+      $scope.authData = authData;
+    })
+  }
+])
+
+    /* liste des recettes */
 
 
 .factory('Items', ['$firebaseArray', function($firebaseArray) {
@@ -147,7 +174,7 @@ exemple.run(function($ionicPlatform) {
 }])
 
 .controller('ListCtrl', function($scope, Items) {
-   $scope.items = Items;
+  $scope.items = Items;
 
   $scope.addItem = function() {
     var name = prompt('Ajoutez votre recette !!');
@@ -159,9 +186,36 @@ exemple.run(function($ionicPlatform) {
   };
 })
 
+//AJOUTER DES RECETTES
+
+.factory('Recettes', ['$firebaseArray', function($firebaseArray) {
+  var itemsRef = new Firebase('https://tasteit.firebaseio.com/');
+  return $firebaseArray(itemsRef);
+}])
+
+.controller('AddRecetteCtrl', function($scope, Recettes) {
+  $scope.recettes = Recettes;
+
+  $scope.addRecette = function(){
+    recettename = this.recettename;
+    etapes = this.etapes;
+    diff = this.diff;
+    temps = this.temps;
+    nbPers = this.nbPers;
+
+    $scope.recettes.$add({
+      "recettename": recettename,
+      "etapes": etapes,
+      "diff": diff,
+      "temps": temps,
+      "nbPers": nbPers
+    });
+
+  };
+});
 
 //AJOUTER DES RECETTES
-angular.module('starter').factory("recipes", function($firebaseArray) {
+/*angular.module('starter').factory("recipes", function($firebaseArray) {
     var itemsRef = new Firebase("https://tasteit.firebaseio.com/recipes");
     return $firebaseArray(itemsRef);
 });
@@ -177,6 +231,7 @@ angular.module('starter').controller("AddRecipeController", function($scope, Rec
         difficulte = this.difficulte;
         temps = this.temps;
         nbPersonne = this.nbPersonne;
+        
         var ingredient = [
                 "fraise",
                 "farine"
@@ -190,8 +245,7 @@ angular.module('starter').controller("AddRecipeController", function($scope, Rec
             "description": description,
             "difficulte": difficulte,
             "temps": temps,
-            "nbPersonne": nbPersonne,
-            "ingredient": ingredient
+            "nbPersonne": nbPersonne
         });
 
     };
@@ -203,5 +257,15 @@ angular.module('SwaltyApp').controller('RecipeController', function($scope, Reci
     $scope.recipes = Recipes;
 });
 
+//LOGIN GOOGLE
 
+    var ref = new Firebase("https://tasteit.firebaseio.com");
+    ref.authWithOAuthPopup("google", function(error, authData) {
+      if (error) {
+        console.log("Login Failed!", error);
+      } else {
+        console.log("Authenticated successfully with payload:", authData);
+      }
+    });
 
+*/

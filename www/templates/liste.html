@@ -1,28 +1,48 @@
-<ion-view title="liste" ng-init="list()" >
+<ion-view title="liste">
 
 <div class="bar bar-header bar-jaune">
   <h1 class="title">TASTE!T</h1>
-  <button class="button button-icon ion-plus" ng-click="addItem()"></button>
+  <button class="button button-icon ion-plus" ui-sref="test-content"></button>
 </div>
 
     <ion-content class="margin-liste-top" ng-controller="ListCtrl">
 
 
-      <ion-list>
-        <h1 class="title">Items</h1>
-
-               <a ui-sref="test-content">Go test</a>
+     
+<h2>&nbsp;</h2>
 
         <label class="item item-input">
           <i class="icon ion-search placeholder-icon"></i>
           <input type="search" placeholder="search" ng-model="searchQuery"/>
         </label>
 
-        <ion-item ui-sref="single-rec" ng-repeat="item in items | filter:searchQuery">
-          {{item.name}}
+        <ion-item ng-repeat="recette in recettes | filter:searchQuery">
+
+        <div class="list card">
+
+          <div class="item item-avatar">
+            <h2>{{recette.recettename}}</h2>
+            <p>{{recette.nbPers}}</p>
+          </div>
+
+          <div class="item item-body">
+            
+              {{recette.etapes}}
+            
+            <p>
+              <a class="subdued">{{recette.diff}}</a>
+              <a class="subdued">{{recette.temps}}</a>
+            </p>
+
+          </div>
+
+        </div>
+
         </ion-item>
 
-      </ion-list>
+  
+
+
 
       <p>&nbsp;</p>
 

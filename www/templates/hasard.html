@@ -3,12 +3,40 @@
 
   <div class="bar bar-header bar-vert">
     <h1 class="title">TASTE!T</h1>
+    <button class="button button-icon ion-plus" ui-sref="add-recipe"></button>
   </div>
 
       <ion-content>
 
-      <h1 class="bouche-trou">Coucou :*</h1>
-        <h1 class="padding">HASARD</h1>      
+        <h1 class="verdatre">{Recette au Hasard}</h1>
+
+        <img src="../img/croque.jpg" class="fraise">
+
+        <p class="titre-gauche">{ Titre détaillé } <br><br>
+
+          <u class="green">Difficulté</u> : <strong>{ diff }</strong>
+        </p>
+
+          <img src="../img/rate.png" class="rate1">
+        <strong>{ nb } votes</strong>
+
+        <div style="text-align:center;">
+          <button class="button voir-recette">
+            Commentaires ( {nb } )
+          </button><!-- Peut être optionnel -->
+        </div>
+
+        <div class="hr-gauche"></div>
+        <p class="ou">ou</p>
+        <div class="hr-droite"></div>
+
+
+        <img src="../img/dés-hasard.png" class="des">
+        <div style="text-align:center;">
+          <button class="button relancer">
+            Relancer les dés
+          </button>
+        </div>
 
       </ion-content>
 
