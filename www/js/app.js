@@ -253,7 +253,25 @@ exemple.run(function($ionicPlatform) {
     var handle = $ionicScrollDelegate.$getByHandle('BasesDelegate');
     handle.anchorScroll(true);
   };
+})
+
+// Fonction loading
+
+.controller('LoadingCtrl', function($scope, $ionicLoading) {
+  $scope.show = function() {
+    $ionicLoading.show({
+      template: 'Loading...'
+    }).then(function(){
+      console.log("The loading indicator is now displayed");
+    });
+  };
+  $scope.hide = function(){
+    $ionicLoading.hide().then(function(){
+      console.log("The loading indicator is now hidden");
+    });
+  };
 });
+
 
 
 //AJOUTER DES RECETTES
