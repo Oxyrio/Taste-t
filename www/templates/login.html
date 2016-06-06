@@ -14,34 +14,27 @@
                     <input ng-model="password" type="password" placeholder="Mot de passe" />
                 </label>
             </div>
-            <div class="padding">
-                <button ng-click="login(username, password)" class="button button-block button-assertive rech-text">Se connecter</button>
-                <button ng-click="register(username, password)" class="button button-block button-energized rech-text">S'inscrire</button>
+            <div class="padding button-center" style="text-align: center;">
+                <button ng-click="login(username, password)" class="button button-assertive rech-text">Se connecter</button><br><br>
+                <button ng-click="register(username, password)" class="button button-energized rech-text">S'inscrire</button>
                 
             </div>
 
             <div class="container-rs">
-
-                <div ng-app="sampleApp" ng-controller="SampleCtrl" style="padding-top: 20%">
+                <div ng-app="sampleApp" ng-controller="SampleCtrl" style="padding-top: 5%">
                     <div ng-show="authData">
-                        <p>Hello, {{ authData.facebook.displayName }}</p>
-                        <button ng-click="auth.$unauth()" ui-sref="login">Logout</button>
+                        <p>{{ authData.facebook.displayName }}</p>
+                        <button class="button button-calm" ng-click="auth.$unauth()" ui-sref="login">Logout</button>
                     </div>
                     <div ng-hide="authData">
-                        <p>Welcome, please log in.</p>
-                        <button ng-click="auth.$authWithOAuthPopup('facebook')" ui-sref="home">Login With Facebook</button>
+                        <button class="button button-positive ion-social-facebook" ng-click="auth.$authWithOAuthPopup('facebook')" ui-sref="home"></button>
+                        <button class="button button-assertive ion-social-googleplus" ng-click="auth.$authWithOAuthPopup('facebook')" ui-sref="home"></button>
+                        <button class="button button-calm ion-social-twitter" ng-click="auth.$authWithOAuthPopup('facebook')" ui-sref="home"></button>
                     </div>
                 </div>
-                
-                <img class="img-rs" src="../img/fb.png" alt="fb" href="">
-                
-                
-                <img class="img-rs" src="../img/gg.png" alt="google+">
-
-                
-                <img class="img-rs" src="../img/twitter-rond.png">
-
             </div>
+
+            &nbsp;
 
             <p class="text-rs">Retrouvez nous sur les réseaux sociaux !</p>
 
