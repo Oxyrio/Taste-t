@@ -107,6 +107,11 @@ exemple.run(function($ionicPlatform) {
     controller: 'AddRecetteCtrl'
   })
 
+  .state('test-db', {
+    url: '/test-db',
+    templateUrl: 'templates/test-db.html'
+  })
+
    $urlRouterProvider.otherwise('/login');
 
 
@@ -202,16 +207,37 @@ exemple.run(function($ionicPlatform) {
     diff = this.diff;
     temps = this.temps;
     nbPers = this.nbPers;
+    sucsal = this.sucsal;
+    genre = this.genre;
+    faim = this.faim;
+    alcool = this.alcool;
+    autres = this.autres;
 
     $scope.recettes.$add({
       "recettename": recettename,
       "etapes": etapes,
       "diff": diff,
       "temps": temps,
-      "nbPers": nbPers
+      "nbPers": nbPers,
+      "sucsal": sucsal,
+      "genre": genre,
+      "faim": faim,
+      "alcool": alcool,
+      "autres": autres
     });
 
   };
+})
+
+.controller('ShowArticleCtrl', function($scope) {
+  
+  $scope.showArticle = function(){
+
+    var url = "https://tasteit.firebaseio.com/KJHI60CGSqzHH35x8jW";
+
+    alert(url);
+  };
+
 });
 
 //AJOUTER DES RECETTES

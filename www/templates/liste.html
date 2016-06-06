@@ -21,8 +21,8 @@
         <div class="list card">
 
           <div class="item item-avatar">
-            <h2>{{recette.recettename}}</h2>
-            <p>{{recette.nbPers}}</p>
+            <h2>Nom : {{recette.recettename}}</h2>
+            <p>Pour : {{recette.nbPers}}</p>
           </div>
 
           <div class="item item-body">
@@ -30,8 +30,22 @@
               {{recette.etapes}}
             
             <p>
-              <a class="subdued">{{recette.diff}}</a>
-              <a class="subdued">{{recette.temps}}</a>
+              <a class="subdued">Difficulté : {{recette.diff}}</a>
+              <a class="subdued">Temps : {{recette.temps}}</a>
+            </p>
+
+            <p>
+              <a class="subdued">Type : {{recette.type}}</a>
+              <a class="subdued">{{recette.sucsal}}</a>
+            </p>
+
+            <p>
+              <a class="subdued">{{recette.faim}}</a>
+            </p>
+
+            <p>
+              <a class="subdued">Alcool ? {{recette.alcool}}</a>
+              <a class="subdued">Autres : {{recette.autres}}</a>
             </p>
 
           </div>
@@ -39,8 +53,6 @@
         </div>
 
         </ion-item>
-
-  
 
 
 

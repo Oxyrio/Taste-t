@@ -21,23 +21,118 @@
               <label class="item item-input">
                 <input type="text" ng-model="recettename" placeholder="Titre de la recette">
               </label>
-              <label class="item item-input">
+
+            <!--  <label class="item item-input">
                 <input type="text" ng-model="diff" placeholder="Difficulté">
+              </label> -->
+
+              <label class="item item-input item-select">
+                <div class="input-label">
+                  Difficulté
+                </div>
+                <select ng-model="diff">
+                  <option selected>Facile</option>
+                  <option>Moyen</option>
+                  <option>Difficile</option>
+                </select>
               </label>
+
               <label class="item item-input">
                 <textarea ng-model="etapes" placeholder="Description de la recette"></textarea>
               </label>
+
+              <label class="item item-input item-select">
+                <div class="input-label">
+                  Sucré / Salé ?
+                </div>
+                <select ng-model="sucsal">
+                  <option selected>Salé</option>
+                  <option>Sucré</option>
+                </select>
+              </label>
+
+              <label class="item item-input item-select">
+                <div class="input-label">
+                  Type de plat
+                </div>
+                <select ng-model="genre">
+                  <option selected>Appéritif</option>
+                  <option>Entrée</option>
+                  <option>Plats</option>
+                  <option>Desserts</option>
+                  <option>Soupes</option>
+                  <option>Gâteaux</option>
+                  <option>Cocktail</option>
+                </select>
+              </label>
+
+              <label class="item item-input item-select">
+                <div class="input-label">
+                  Petite ou grosse faim ?
+                </div>
+                <select ng-model="faim">
+                  <option selected>Petite faim</option>
+                  <option>Grosse faim</option>
+                </select>
+              </label>
+
+              <label class="item item-input item-select">
+                <div class="input-label">
+                  Alcoolisé ?
+                </div>
+                <select ng-model="alcool">
+                  <option selected>Non</option>
+                  <option>Oui</option>
+                </select>
+              </label>
+
+              
+
+              <label class="item item-input item-select">
+                <div class="input-label">
+                  Autre chose ?
+                </div>
+                <select ng-model="autres">
+                  <option selected>Non</option>
+                  <option>Epicé</option>
+                  <option>Orientale</option>
+                  <option>Plutôt fruits</option>
+                  <option>Plutôt légumes</option>
+                </select>
+              </label>
+
+   
+
               <label class="item item-input">
                 <input type="text" ng-model="temps" placeholder="Temps de préparation">
               </label>
-              <label class="item item-input">
+
+            <!--  <label class="item item-input">
                 <input type="text" ng-model="nbPers" placeholder="Nombre de personnes">
+              </label> -->
+
+              <label class="item item-input item-select">
+                <div class="input-label">
+                  Nombre de personnes
+                </div>
+                <select ng-model="nbPers">
+                  <option selected>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                </select>
               </label>
+
+
+
             </div>
 
             <br><br>
             <div style="text-align:center;">
-              <button class="button button-energized" type="submit">
+              <button class="button button-energized" type="submit" ng-click="addRecette()" ui-sref="liste">
                   Ajouter la recette
               </button>
             </div>
