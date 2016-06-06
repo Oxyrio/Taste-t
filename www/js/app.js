@@ -213,6 +213,7 @@ exemple.run(function($ionicPlatform) {
     faim = this.faim;
     alcool = this.alcool;
     autres = this.autres;
+    vote = 0;
 
     $scope.recettes.$add({
       "recettename": recettename,
@@ -224,7 +225,8 @@ exemple.run(function($ionicPlatform) {
       "genre": genre,
       "faim": faim,
       "alcool": alcool,
-      "autres": autres
+      "autres": autres,
+      "vote": vote
     });
 
   };
@@ -248,7 +250,7 @@ exemple.run(function($ionicPlatform) {
 .controller('AnchorBasesCtrl', function ($scope, $ionicScrollDelegate, $location) {
   $scope.scrollTo = function (target) {
     $location.hash(target); //set the location hash
-    var handle = $ionicScrollDelegate.$getByHandle('BasesDelegate'); 
+    var handle = $ionicScrollDelegate.$getByHandle('BasesDelegate');
     handle.anchorScroll(true);
   };
 });

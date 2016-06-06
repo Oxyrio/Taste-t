@@ -22,7 +22,7 @@
 
           <div class="item item-avatar">
             <h2>Nom : {{recette.recettename}}</h2>
-            <p>Pour : {{recette.nbPers}}</p>
+            <p>Pour : {{recette.nbPers}} personne(s)</p>
           </div>
 
           <div class="item item-body">
@@ -47,6 +47,9 @@
               <a class="subdued">Alcool ? {{recette.alcool}}</a>
               <a class="subdued">Autres : {{recette.autres}}</a>
             </p>
+
+            <button class="button button-energized">Votez</button>
+            <button class="button button-energized button-outline" disabled>{{ recette.vote }}</button>
 
           </div>
 
