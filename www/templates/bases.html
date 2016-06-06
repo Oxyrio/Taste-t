@@ -4,27 +4,33 @@
   <h1 class="title">TASTE!T</h1>
 </div>
 
-      <ion-content>
+      <ion-content delegate-handle="BasesDelegate">
 
 
         <p>&nbsp;</p>
         <p>&nbsp;</p>
+
+
 
         <div class="list card">
 
           <div class="item item-avatar">
-            <img src="../img/standby.png">
+            <img src="../img/logobases.png">
             <h2>Sommaire : </h2>
-            <a href=""><h2>- Faire de la mayonnaise</h2></a>
-            <a href=""><h2>- Faire de la vinaigrette</h2></a>
+            <a ng-click="scrollTo('ancre_mayo')" style="text-decoration: underline; color: black;"><h2>- Faire de la mayonnaise</h2></a>
+            <a ng-click="scrollTo('ancre_vina')" style="text-decoration: underline; color: black;"><h2>- Faire de la vinaigrette</h2></a>
+            <a ng-click="scrollTo('ancre_omel')" style="text-decoration: underline; color: black;"><h2>- Faire une omelette</h2></a>
+            <a ng-click="scrollTo('ancre_gatc')" style="text-decoration: underline; color: black;"><h2>- Faire un gâteau au chocolat</h2></a>
           </div>
 
         </div>
 
-        <div class="list card">
+        <hr class="anchorbases" id="ancre_mayo">
+
+        <div class="list card" id="ancre_mayo">
 
           <div class="item item-avatar">
-            <img src="../img/standby.png">
+            <img src="../img/logobases.png">
             <h2>Leçon 1 :</h2>
             <h2>Faire de la mayonnaise</h2>
           </div>
@@ -61,11 +67,13 @@
 
         </div>
 
+        <hr class="anchorbases" id="ancre_vina">
+
         <div class="list card">
 
           <div class="item item-avatar">
-            <img src="../img/standby.png">
-            <h2>Leçon 1 :</h2>
+            <img src="../img/logobases.png">
+            <h2>Leçon 2 :</h2>
             <h2>Faire de la vinaigrette</h2>
           </div>
 
@@ -74,7 +82,7 @@
               Difficulté : Facile<br>
               Temps de préparation : 5 min
             </p>
-            <img class="full-image" src="../img/lecons/mayo-lec1.jpg">
+            <img class="full-image" src="../img/lecons/vina-lec2.jpg">
             <h2>
               Ingrédients (pour 2 personnes):
             </h2>
@@ -93,10 +101,52 @@
               &nbsp;
 
               <h2>Préparation de la recette :</h2>
-              <p>Gardez les ingrédients à température ambiante.<br>
-                Commencez par mélanger le jaune d'oeuf avec un peu de sel, un peu de poivre, la cuillère à soupe de moutarde forte et le vinaigre.<br>
-                Fouettez en versant l'huile peu à peu, la mayonnaise doit commencer à s'épaissir.<br>
-                Vous pouvez également ajouter des herbes pour la parfumer !</p>
+              <p>Rien de plus simple ici, il suffit de mélanger tous les ingrédients.
+              L'eau permet d'alléger la vinaigrette et de mieux homogénéiser.</p>
+          </div>
+
+        </div>
+
+        <hr class="anchorbases" id="ancre_omel">
+
+        <div class="list card">
+
+          <div class="item item-avatar">
+            <img src="../img/logobases.png">
+            <h2>Leçon 3 :</h2>
+            <h2>Faire une omelette</h2>
+          </div>
+
+          <div class="item item-body">
+            <p>
+              Difficulté : Facile<br>
+              Temps de préparation : 15 min
+            </p>
+            <img class="full-image" src="../img/lecons/omel-lec3.jpg">
+            <h2>
+              Ingrédients :
+            </h2>
+            <ul>
+              <li>2 oeufs (par personne) + 1</li>
+              <h2>Suppléments :</h2>
+              <li>1 tranche de jambon</li>
+              <li>Du gruyère rapé</li>
+              <li>&nbsp;</li>
+            </ul>
+
+            <hr>
+
+            &nbsp;
+
+            <h2>Préparation de la recette :</h2>
+            <p>Cassez les oeufs dans un saladier et remuez bien pendant 5 min.<br>
+            Pendant ce temps, faites chauffer la plaque de cuisson et placez votre poêle dessus.<br>
+            Versez les oeufs battus sur la poêle, faites en sorte que cela prenne tout l'espace.<br>
+            A l'aide d'une cuillère en bois, percez légérement l'omelette afin de bien la faire cuire.<br>
+            Pour les suppléments, versez des morceaux de jambon prédécoupés et du gruyère.<br>
+            Vous pouvez ajouter du poivre pour le goût.<br>
+            Laisser cuire 2-3 min.<br>
+            Repliez l'omelette sur elle-même et sortez là de la poêle.</p>
           </div>
 
         </div>

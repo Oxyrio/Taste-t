@@ -55,7 +55,8 @@ exemple.run(function($ionicPlatform) {
 
     .state('bases', {
     url: '/bases',
-    templateUrl: 'templates/bases.html'        
+    templateUrl: 'templates/bases.html',
+    controller: 'AnchorBasesCtrl'
   })
 
     .state('rech', {
@@ -229,6 +230,8 @@ exemple.run(function($ionicPlatform) {
   };
 })
 
+//FONCTION AFFICHER RECETTE TOUTE SEULE
+
 .controller('ShowArticleCtrl', function($scope) {
   
   $scope.showArticle = function(){
@@ -238,7 +241,18 @@ exemple.run(function($ionicPlatform) {
     alert(url);
   };
 
+})
+
+//FONCTION ANCHOR SCROLL BASES
+
+.controller('AnchorBasesCtrl', function ($scope, $ionicScrollDelegate, $location) {
+  $scope.scrollTo = function (target) {
+    $location.hash(target); //set the location hash
+    var handle = $ionicScrollDelegate.$getByHandle('BasesDelegate'); 
+    handle.anchorScroll(true);
+  };
 });
+
 
 //AJOUTER DES RECETTES
 /*angular.module('starter').factory("recipes", function($firebaseArray) {

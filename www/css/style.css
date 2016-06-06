@@ -348,3 +348,12 @@ u{
 	margin-top: 17%;
 
 }
+
+
+/*/////////////// PAGE BASES ////////////*/
+
+.anchorbases {
+	background-color: white;
+	border: solid 1px white;
+	margin-bottom: 50px;
+}
