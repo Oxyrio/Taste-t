@@ -160,7 +160,7 @@ exemple.run(function($ionicPlatform) {
   }
 ])
 
-.controller("SampleCtrl", ["$scope", "Auth",
+.controller("SampleCtrl", ["$scope", "Auth", //pour facebook, twitter et google+
   function($scope, Auth) {
     $scope.auth = Auth;
 
