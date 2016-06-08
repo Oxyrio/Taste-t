@@ -8,32 +8,25 @@
 
       <ion-content>
 
-        <h1 class="verdatre">{Recette au Hasard}</h1>
+        <h1>Recette au hasard</h1>
+        &nbsp;
 
-        <img src="../img/croque.jpg" class="fraise">
+        <p class="titre-gauche" id="hasardtitre">Jetez les dés !</p>
 
-        <p class="titre-gauche">{ Titre détaillé } <br><br>
+        <div class="padding">
 
-          <u class="green">Difficulté</u> : <strong>{ diff }</strong>
-        </p>
+            <h3 id="prephas">Difficulté :</h3>
+            <p id="hasarddiff">Jetez les dés !</p>
 
-          <img src="../img/rate.png" class="rate1">
-        <strong>{ nb } votes</strong>
 
-        <div style="text-align:center;">
-          <button class="button voir-recette">
-            Commentaires ( {nb } )
-          </button><!-- Peut être optionnel -->
+            <h3 id="prephas">Préparation de la recette :</h3>
+            <p id="hasarddesc">Jetez les dés !</p>
+
         </div>
 
-        <div class="hr-gauche"></div>
-        <p class="ou">ou</p>
-        <div class="hr-droite"></div>
 
-
-        <img src="../img/des-hasard.png" class="des">
         <div style="text-align:center;">
-          <button class="button relancer">
+          <button class="button relancer" ng-click="hasardArticle()">
             Relancer les dés
           </button>
         </div>

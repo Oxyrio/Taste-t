@@ -261,6 +261,11 @@ u{
 
 /*/////////////////// PAGE HASARD ///////////////////////*/
 
+#prephas {
+	font-size: 1.3em;
+	font-family: Arial;
+	text-decoration: underline;
+}
 
 .green{
 	color: #9fcb14;
@@ -283,12 +288,8 @@ u{
 }
 
 .titre-gauche{
-	font-family: "DK Lemon Yellow Sun";
-	font-size: 18px;
+	font-size: 1.5em;
 	text-align: center;
-	padding-top: 40px;
-	float: right;
-	margin-right: 10%;
 }
 
 .rate1{

@@ -44,7 +44,8 @@ exemple.run(function($ionicPlatform) {
 
     .state('hasard', {
     url: '/hasard',
-    templateUrl: 'templates/hasard.html'        
+    templateUrl: 'templates/hasard.html',
+    controller: 'ArticleHasardCtrl'
   })
 
     .state('liste', {
@@ -231,6 +232,79 @@ exemple.run(function($ionicPlatform) {
 
   };
 })
+
+
+// FONCTION POUR HASARD
+
+.controller('ArticleHasardCtrl', function ($scope) {
+
+  $scope.hasardArticle = function () {
+
+    var has = Math.floor((Math.random() * 6));
+    var texthas;
+    var titrerec;
+    var diff;
+    var desc;
+
+    //var commun = "3 coms";
+    //var comdeu = "6 coms";
+
+    switch (has){
+      case 0:
+            titrerec = "Pâtes carbonara";
+            diff = "Facile";
+            desc = "Faire bouillir de l'eau et faire cuire les pâtes pendant 10min";
+            break;
+      case 1:
+            titrerec = "Sandwich Jambon";
+            diff = "Moyen";
+            desc = "Du pain, du beurre et du jambon";
+            break;
+      case 2:
+            titrerec = "Steak hâché";
+            diff = "Difficile";
+            desc = "Faites cuire pendant 3min de chaque côté à feu moyen";
+            break;
+      case 3:
+            titrerec = "Le plat de Matthieu";
+            diff = "Facile";
+            desc = "26/05/96";
+            break;
+      case 4:
+            titrerec = "Le plat d'Aymé";
+            diff = "Facile";
+            desc = "30/11/95";
+            break;
+      case 5:
+            titrerec = "Le plat de Hugo";
+            diff = "Facile";
+            desc = "Unborn";
+        break;
+      default:
+            texthas = has + ": Triste";
+    }
+
+    document.getElementById("hasardtitre").innerHTML = titrerec;
+    document.getElementById("hasarddiff").innerHTML = diff;
+    document.getElementById("hasarddesc").innerHTML = desc;
+
+
+    /*
+    if(0 < has < 50){
+      document.getElementById("commhas").innerHTML = commun;
+    }else if(has > 50){
+      document.getElementById("commhas").innerHTML = comdeu;
+    };*/
+
+
+
+  };
+
+})
+
+
+
+
 
 //FONCTION AFFICHER RECETTE TOUTE SEULE
 
