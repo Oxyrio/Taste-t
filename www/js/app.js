@@ -9,24 +9,39 @@ var fb = null;
 
 exemple.run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
-    if(window.cordova && window.cordova.plugins.Keyboard) {
-      // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
-      // for form inputs)
+    // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
+    // for form inputs)
+    if (window.cordova && window.cordova.plugins && window.cordova.plugins.Keyboard) {
       cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
-
-      // Don't remove this line unless you know what you are doing. It stops the viewport
-      // from snapping when text inputs are focused. Ionic handles this internally for
-      // a much nicer keyboard experience.
       cordova.plugins.Keyboard.disableScroll(true);
     }
-    if(window.StatusBar) {
+    if (window.StatusBar) {
+      // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
     }
 
     fb = new Firebase("https://tasteit.firebaseio.com/");
 
   });
+
+  /*$rootScope.$on('$stateChangeError', function(event, toState, toParams, fromState, fromParams, error) {
+    // We can catch the error thrown when the $requireAuth promise is rejected
+    // and redirect the user back to the home page
+    if (error === 'AUTH_REQUIRED') {
+      $state.go('login');
+    }
+  });*/
+  
 })
+
+/*ApplicationRun.$inject = ['$ionicPlatform', '$rootScope', '$state'];
+
+function AuthDataResolver(Auth) {
+  return Auth.$requireAuth();
+}
+AuthDataResolver.$inject = ['Auth'];*/
+
+
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -93,8 +108,9 @@ exemple.run(function($ionicPlatform) {
   })
 
   .state('single-rec', {
-    url: '/single-rec',
-    templateUrl: 'templates/single-rec.html'
+    url: '/single-rec/:recId',
+    templateUrl: 'templates/single-rec.html'/*,
+    controller: 'RecDetailCtrl'*/
   })
 
   .state('add-recipe', {
@@ -152,7 +168,20 @@ exemple.run(function($ionicPlatform) {
 
 })
 
-    /* se connecter via Facebook */
+    /* se connecter via réseaux sociaux
+
+
+.controller("SampleCtrl", function RsLoginCtrl(Auth, $state) {
+
+  this.loginWithGoogle = function loginWithGoogle(){
+    Auth.$authWithOAuthPopup('google')
+        .then(function (authData) {
+          $state.go('home');
+        });
+  };
+
+}) */
+
 
 .factory("Auth", ["$firebaseAuth",
   function($firebaseAuth) {
@@ -160,7 +189,16 @@ exemple.run(function($ionicPlatform) {
     return $firebaseAuth(ref);
   }
 ])
-
+     /*
+.controller("SampleCtrl", function (Auth, $state) {
+  this.loginWithGoogle = function loginWithGoogle(){
+    Auth.$authWithOAuthPopup('google')
+        .then(function (authData) {
+          $state.go('home');
+        });
+  };
+})
+*/
 .controller("SampleCtrl", ["$scope", "Auth", //pour facebook, twitter et google+
   function($scope, Auth) {
     $scope.auth = Auth;
@@ -180,7 +218,7 @@ exemple.run(function($ionicPlatform) {
   return $firebaseArray(itemsRef);
 }])
 
-.controller('ListCtrl', function($scope, Items) {
+.controller('ListCtrl', function($scope, Items, $state, mySingle) {
   $scope.items = Items;
 
   $scope.addItem = function() {
@@ -191,6 +229,12 @@ exemple.run(function($ionicPlatform) {
       });
     }
   };
+
+  $scope.single = function(){
+    single = this.recette;
+    mySingle.set(single);
+  }
+
 })
 
 //AJOUTER DES RECETTES
@@ -215,6 +259,7 @@ exemple.run(function($ionicPlatform) {
     alcool = this.alcool;
     autres = this.autres;
     vote = 0;
+    id = Math.floor((Math.random() * 100000));
 
     $scope.recettes.$add({
       "recettename": recettename,
@@ -227,11 +272,14 @@ exemple.run(function($ionicPlatform) {
       "faim": faim,
       "alcool": alcool,
       "autres": autres,
-      "vote": vote
+      "vote": vote,
+      "id": id
     });
 
   };
 })
+
+// FONCTION POUR DAILY
 
 
 // FONCTION POUR HASARD
@@ -240,53 +288,180 @@ exemple.run(function($ionicPlatform) {
 
   $scope.hasardArticle = function () {
 
-    var has = Math.floor((Math.random() * 6));
-    var texthas;
-    var titrerec;
-    var diff;
+    var d = new Date();
+    var n = d.getDate();
+
+    var plat;
     var desc;
+    var diff;
+    var img;
 
-    //var commun = "3 coms";
-    //var comdeu = "6 coms";
-
-    switch (has){
-      case 0:
-            titrerec = "Pâtes carbonara";
-            diff = "Facile";
-            desc = "Faire bouillir de l'eau et faire cuire les pâtes pendant 10min";
-            break;
+    switch (n) {
       case 1:
-            titrerec = "Sandwich Jambon";
-            diff = "Moyen";
-            desc = "Du pain, du beurre et du jambon";
-            break;
-      case 2:
-            titrerec = "Steak hâché";
-            diff = "Difficile";
-            desc = "Faites cuire pendant 3min de chaque côté à feu moyen";
-            break;
-      case 3:
-            titrerec = "Le plat de Matthieu";
-            diff = "Facile";
-            desc = "26/05/96";
-            break;
-      case 4:
-            titrerec = "Le plat d'Aymé";
-            diff = "Facile";
-            desc = "30/11/95";
-            break;
-      case 5:
-            titrerec = "Le plat de Hugo";
-            diff = "Facile";
-            desc = "Unborn";
+        plat = "plat 2";
+        desc = "desc 2";
+        diff = "diff 2";
         break;
-      default:
-            texthas = has + ": Triste";
+      case 2:
+        plat = "plat 3";
+        desc = "desc 3";
+        diff = "diff 3";
+        break;
+      case 3:
+        plat = "plat 4";
+        desc = "desc 4";
+        diff = "diff 4";
+        break;
+      case 4:
+        plat = "plat 5";
+        desc = "desc 5";
+        diff = "diff 5";
+        break;
+      case 5:
+        plat = "plat 6";
+        desc = "desc 6";
+        diff = "diff 6";
+        break;
+      case 6:
+        plat = "plat 7";
+        desc = "desc 7";
+        diff = "diff 7";
+        break;
+      case 7:
+        plat = "plat 8";
+        desc = "desc 8";
+        diff = "diff 8";
+        break;
+      case 8:
+        plat = "plat 9";
+        desc = "desc 9";
+        diff = "diff 9";
+        break;
+      case 9:
+        plat = "plat 10";
+        desc = "desc 10";
+        diff = "diff 10";
+        break;
+      case 10:
+        plat = "Spaghetti à la Carbonara";
+        desc = "Faites cuire les spaguettis à votre goût. Faites suer les lardons dans une poêle sans les griller. <br> Lorsque les spaguettis sont cuits, " +
+            "égouttez-les sur le feu, ajoutez rapidement aux spaguettis chauds, les lardons, l'oeuf entier. <br> Mélangez, ajoutez la crème fraîche et " +
+            "servez chaud avec du gruyère râpé ou du parmesan.";
+        diff = "Facile";
+        break;
+      case 11:
+        plat = "plat 12";
+        desc = "desc 12";
+        diff = "diff 12";
+        break;
+      case 12:
+        plat = "plat 13";
+        desc = "desc 13";
+        diff = "diff 13";
+        break;
+      case 13:
+        plat = "plat 14";
+        desc = "desc 14";
+        diff = "diff 14";
+        break;
+      case 14:
+        plat = "plat 15";
+        desc = "desc 15";
+        diff = "diff 15";
+        break;
+      case 15:
+        plat = "plat 16";
+        desc = "desc 16";
+        diff = "diff 16";
+        break;
+      case 16:
+        plat = "plat 17";
+        desc = "desc 17";
+        diff = "diff 17";
+        break;
+      case 17:
+        plat = "plat 18";
+        desc = "desc 18";
+        diff = "diff 18";
+        break;
+      case 18:
+        plat = "plat 19";
+        desc = "desc 19";
+        diff = "diff 19";
+        break;
+      case 19:
+        plat = "plat 20";
+        desc = "desc 20";
+        diff = "diff 20";
+        break;
+      case 20:
+        plat = "plat 21";
+        desc = "desc 21";
+        diff = "diff 21";
+        break;
+      case 21:
+        plat = "plat 22";
+        desc = "desc 22";
+        diff = "diff 22";
+        break;
+      case 22:
+        plat = "plat 23";
+        desc = "desc 23";
+        diff = "diff 23";
+        break;
+      case 23:
+        plat = "plat 24";
+        desc = "desc 24";
+        diff = "diff 24";
+        break;
+      case 24:
+        plat = "plat 25";
+        desc = "desc 25";
+        diff = "diff 25";
+        break;
+      case 25:
+        plat = "plat 26";
+        desc = "desc 26";
+        diff = "diff 26";
+        break;
+      case 26:
+        plat = "plat 27";
+        desc = "desc 27";
+        diff = "diff 27";
+        break;
+      case 27:
+        plat = "plat 28";
+        desc = "desc 28";
+        diff = "diff 28";
+        break;
+      case 28:
+        plat = "plat 29";
+        desc = "desc 29";
+        diff = "diff 29";
+        break;
+      case 29:
+        plat = "plat 30";
+        desc = "desc 30";
+        diff = "diff 30";
+        break;
+      case 30:
+        plat = "plat 31";
+        desc = "desc 31";
+        diff = "diff 31";
+        break;
+      case 31:
+        plat = "plat 32";
+        desc = "desc 32";
+        diff = "diff 32";
+        break;
+
     }
 
-    document.getElementById("hasardtitre").innerHTML = titrerec;
+    document.getElementById("hasardtitre").innerHTML = plat;
     document.getElementById("hasarddiff").innerHTML = diff;
     document.getElementById("hasarddesc").innerHTML = desc;
+    document.getElementById("hasardimg").innerHTML = img;
+
 
 
     /*
@@ -308,7 +483,16 @@ exemple.run(function($ionicPlatform) {
 
 //FONCTION AFFICHER RECETTE TOUTE SEULE
 
-.controller('ShowArticleCtrl', function($scope) {
+/*.controller('RecDetailCtrl', function ($scope, $stateParams, Recettes) {
+  $scope.recdet = Recettes.get($stateParams.recId);
+})*/
+
+.controller('SingleController', function($scope, Recettes, mySingle){  
+  $scope.single = mySingle.get(); 
+ })
+
+
+/* .controller('ShowArticleCtrl', function($scope) {
   
   $scope.showArticle = function(){
 
@@ -317,7 +501,7 @@ exemple.run(function($ionicPlatform) {
     alert(url);
   };
 
-})
+}) */
 
 //FONCTION ANCHOR SCROLL BASES
 

@@ -25,26 +25,26 @@
 
 
 
-                    <div ng-show="authData"> <!-- POUR FACEBOOK -->
-                        <p>{{ authData.facebook.displayName }}</p>
-                        <button class="button button-calm" ng-click="auth.$unauth()" ui-sref="login">Logout</button>
-                    </div>
+                     <div ng-show="authData">  POUR FACEBOOK
+                         <p>{{ authData.facebook.displayName }}</p>
+                         <button class="button button-calm" ng-click="auth.$unauth()" ui-sref="login">Logout</button>
+                     </div>
 
 
-                    <div ng-show="authData"> <!-- POUR GOOGLE -->
+                    <div ng-show="authData">  POUR GOOGLE
                         <p>{{ authData.google.displayName }}</p>
                         <button class="button button-calm" ng-click="auth.$unauth()" ui-sref="login">Logout</button>
                     </div>
 
 
-                    <div ng-show="authData"> <!-- POUR TWITTER -->
+                <div ng-show="authData">  POUR TWITTER
                         <p>{{ authData.twitter.displayName }}</p>
                         <button class="button button-calm" ng-click="auth.$unauth()" ui-sref="login">Logout</button>
                     </div>
 
 
 
-                    <div ng-hide="authData">
+                    <div>
                         <button class="button button-positive ion-social-facebook" ng-click="auth.$authWithOAuthPopup('facebook')" ui-sref="home"></button>
                         <button class="button button-assertive ion-social-googleplus" ng-click="auth.$authWithOAuthPopup('google')" ui-sref="home"></button>
                         <button class="button button-calm ion-social-twitter" ng-click="auth.$authWithOAuthPopup('twitter')" ui-sref="home"></button>

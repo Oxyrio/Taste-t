@@ -1,14 +1,59 @@
-<ion-view title="single-rec">
+<ion-view title="single-rec" ng-controller="SingleController">
 
 <div class="bar bar-header bar-jaune">
-    <button class="button icon ion-navicon burger"></button>
+    <button class="button icon ion-navicon burger" ui-sref="liste"> Back</button>
     <h1 class="title">TASTE!T</h1>
   </div>
 
 
       <ion-content>
 
-        <h3>Accueil > Recettes > <u>Recettes du Jour</u></h3>
+
+        <h1>La recette</h1>
+
+        <div class="list card">
+
+          <div class="item item-avatar">
+            <h2>Nom : {{single.recettename}}</h2>
+            <p>Pour : {{single.nbPers}} personne(s)</p>
+          </div>
+
+          <div class="item item-body">
+
+            {{single.etapes}}
+
+            <p>
+              <a class="subdued">Difficulté : {{single.diff}}</a>
+              <a class="subdued">Temps : {{single.temps}} min</a>
+            </p>
+
+            <p>
+              <a class="subdued">Type : {{single.type}}</a>
+              <a class="subdued">{{single.sucsal}}</a>
+            </p>
+
+            <p>
+              <a class="subdued">{{single.faim}}</a>
+            </p>
+
+            <p>
+              <a class="subdued">Alcool ? {{single.alcool}} </a>
+              <a class="subdued">Autres : {{single.autres}} </a>
+            </p>
+
+            <button class="button button-energized">Votez</button>
+            <button class="button button-energized button-outline" disabled>{{ single.vote }}</button>
+
+          </div>
+
+        </div>
+
+
+
+
+
+
+       <!-- <h3>Accueil > Recettes > <u>Recettes du Jour</u></h3>
 
         <h1 class="yellow">{Titre recette}</h1>
 
@@ -33,7 +78,7 @@
           - { liste ingrédients }<br>
           - ...
 
-          <!-- ici faire une sorte de foreach ingrédients, retour à la ligne -->
+
 
         </p>
 
@@ -51,14 +96,14 @@
         <div style="text-align:center;">
           <button class="button button-energized commentaire">
           Commentaires ( {nb comments} ) 
-          </button><!-- Peut être optionnel -->
+          </button>
         </div>
 
         <p>&nbsp;</p>
         <p>&nbsp;</p>
         <p>&nbsp;</p>
 
-
+-->
       </ion-content>
 
       <!-- NE PAS TOUCHER LE MENU CI-DESSOUS -->

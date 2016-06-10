@@ -265,6 +265,11 @@ u{
 	font-size: 1.3em;
 	font-family: Arial;
 	text-decoration: underline;
+	margin-top: -10%;
+}
+
+#recthas {
+	text-align: justify;
 }
 
 .green{

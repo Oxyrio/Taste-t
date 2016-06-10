@@ -18,7 +18,7 @@
 
         <ion-item ng-repeat="recette in recettes | filter:searchQuery">
 
-        <div class="list card">
+        <div class="list card" ui-sref="single-rec" ng-click="single(single)">
 
           <div class="item item-avatar">
             <h2>Nom : {{recette.recettename}}</h2>
@@ -27,11 +27,11 @@
 
           <div class="item item-body">
             
-              {{recette.etapes}}
+              <p>Cliquez pour voir les détails !</p>
             
             <p>
               <a class="subdued">Difficulté : {{recette.diff}}</a>
-              <a class="subdued">Temps : {{recette.temps}}</a>
+              <a class="subdued">Temps : {{recette.temps}} min</a>
             </p>
 
             <p>
@@ -44,8 +44,8 @@
             </p>
 
             <p>
-              <a class="subdued">Alcool ? {{recette.alcool}}</a>
-              <a class="subdued">Autres : {{recette.autres}}</a>
+              <a class="subdued">Alcool ? {{recette.alcool}} -</a>
+              <a class="subdued">Autres : {{recette.autres}} </a>
             </p>
 
             <button class="button button-energized">Votez</button>
