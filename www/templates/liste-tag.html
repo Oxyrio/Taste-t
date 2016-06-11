@@ -5,11 +5,91 @@
 </div>
 
 
-      <ion-content>
+      <ion-content ng-controller="ListCtrl">
 
         <h1 class="bouche-trou">Coucou :*</h1>
-        <h1 class="padding">LISTE TAG</h1>
-        <a ui-sref="rech" class="padding style-lien"> > - Retour à la recherche ...</a>
+
+
+
+
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Choisissez votre tag !
+          </div>
+          <i class="icon ion-search placeholder-icon"></i>
+
+          <select ng-model="searchQuery">
+            <option>Facile</option>
+            <option>Moyen</option>
+            <option>Difficile</option>
+            <option>- de 5 min</option>
+            <option>5 - 10 min</option>
+            <option>10 - 30 min</option>
+            <option>+ de 30 min</option>
+            <option>Sucré</option>
+            <option>Salé</option>
+            <option>Appéritif</option>
+            <option>Entrée</option>
+            <option>Plat</option>
+            <option>Dessert</option>
+            <option>Soupe</option>
+            <option>Gâteau</option>
+            <option>Coktail</option>
+            <option>Petite faim</option>
+            <option>Grosse faim</option>
+            <option>Sans alcool</option>
+            <option>Epicé</option>
+            <option>Orientale</option>
+            <option>Fruits</option>
+            <option>Légumes</option>
+          </select>
+        </label>
+
+
+
+        <ion-item ng-repeat="recette in recettes | filter:searchQuery">
+
+          <div class="list card">
+
+            <div class="item item-avatar">
+              <h2>Nom : {{recette.recettename}}</h2>
+              <p>Pour : {{recette.nbPers}} personne(s)</p>
+            </div>
+
+            <div class="item item-body">
+
+              <p>Cliquez pour voir les détails !</p>
+
+              <p>
+                <a class="subdued">Difficulté : {{recette.diff}}</a>
+                <a class="subdued">Temps : {{recette.temps}} min</a>
+              </p>
+
+              <p>
+                <a class="subdued">Type : {{recette.genre}}</a><br>
+                <a class="subdued">{{recette.sucsal}}</a>
+              </p>
+
+              <p>
+                <a class="subdued">{{recette.faim}}</a>
+              </p>
+
+              <p>
+                <a class="subdued">Alcool ? {{recette.alcool}} -</a>
+                <a class="subdued">Autres : {{recette.autres}} </a>
+              </p>
+
+              <button class="button button-vert">Votez</button>
+              <button class="button button-verte" disabled>{{ recette.vote }}</button>
+
+            </div>
+
+          </div>
+
+        </ion-item>
+
+
+
 
 
       </ion-content>

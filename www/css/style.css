@@ -108,8 +108,14 @@
 	margin-top: 1.5%;
 }
 
+.button-vert {
+	background-color: #9fcb14;
+	color: white;
+}
 
-
+.button-verte {
+	border: 1px solid #9fcb14;
+}
 
 
 

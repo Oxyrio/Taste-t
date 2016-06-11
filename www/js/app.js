@@ -104,7 +104,8 @@ AuthDataResolver.$inject = ['Auth'];*/
 
   .state('liste-tag', {
     url: '/liste-tag',
-    templateUrl: 'templates/liste-tag.html'
+    templateUrl: 'templates/liste-tag.html',
+    controller: 'AddRecetteCtrl'
   })
 
   .state('single-rec', {
