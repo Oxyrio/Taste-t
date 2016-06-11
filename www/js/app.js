@@ -77,7 +77,8 @@ AuthDataResolver.$inject = ['Auth'];*/
 
     .state('rech', {
     url: '/rech',
-    templateUrl: 'templates/rech.html'        
+    templateUrl: 'templates/rech.html',
+    controller: 'AddRecetteCtrl'
   })
 
     .state('tend', {
@@ -279,11 +280,30 @@ AuthDataResolver.$inject = ['Auth'];*/
 
   };
 })
+    
+// FONCTIONS POUR RECHERCHE
 
-// FONCTION POUR DAILY
+.controller('RechCtrl', function ($scope) {
+  $scope.showDiv = function (param) {
+    document.getElementById('rech-btns').style.display = "none";
+    document.getElementById('rechrech').style.display = "block";
 
+    document.getElementById("paramrech").innerHTML = param;
+  };
 
-// FONCTION POUR HASARD
+})
+
+/*.controller('RechHideCtrl', function ($scope) {
+
+  $scope.hideDiv = function () {
+    document.getElementById('rech-btns').style.display = "block";
+    document.getElementById('rechrech').style.display = "none";
+  };
+  
+})    */
+    
+
+// FONCTION POUR DAILY / HASARD
 
 .controller('ArticleHasardCtrl', function ($scope) {
 

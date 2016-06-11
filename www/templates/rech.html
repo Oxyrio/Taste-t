@@ -5,104 +5,104 @@
 </div>
 
 
-      <ion-content>
+      <ion-content ng-controller="ListCtrl">
 
 
-        <h1 class="bouche-trou">Coucou :*</h1>
+        <h1 class="bouche-trou">&nbsp;</h1>
         <p class="rech-text padding">Recherchez vos recettes préférées en choisissant le tag de votre choix !</p>
 
        
-        <div id="rech-btns" class="padding">
+        <div id="rech-btns" class="padding" ng-model="searchQuery" ng-controller="RechCtrl">
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Facile')">
                 Facile
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Moyen')">
                 Moyen
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Difficile')">
                 Difficile
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('- de 5 min')">
                 - de 5 min
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('5 - 10 min')">
                 5 - 10 min
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('10 - 30 min')">
                 10 - 30 min
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('+ de 30 min')">
                 + de 30 min
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Sucré')">
                 Sucré
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Salé')">
                 Salé
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
-                Appéritifs
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Appéritif')">
+                Appéritif
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
-                Entrées
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Entrée')">
+                Entrée
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
-                Plats
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Plat')">
+                Plat
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
-                Desserts
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Dessert')">
+                Dessert
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
-                Soupes
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Soupe')">
+                Soupe
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
-                Gâteaux
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Gâteau')">
+                Gâteau
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Petite faim')">
                 Petite faim
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Grosse faim')">
                 Grosse faim
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Cocktail')">
                 Cocktail
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Sans alcool')">
                 Sans alcool
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Épicé')">
                 Épicé
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Orientale')">
                 Orientale
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Fruits')">
                 Fruits
               </button>
 
-              <button class="button button-outline button-balanced espace rech-text" ui-sref="liste-tag">
+              <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Légumes')">
                 Légumes
               </button>
 
@@ -111,6 +111,64 @@
             <p>&nbsp;</p>
 
         </div>
+
+          <div id="rechrech" ng-controler="RechHideCtrl">
+
+              <label class="item item-input">
+                  <i class="icon ion-search placeholder-icon"></i>
+                  <input type="search" placeholder="search" ng-model="searchQuery"/>
+              </label>
+
+              <div class="padding">
+                  <button id="paramrech" class="button button-outline button-balanced espace rech-text">
+
+                  </button>
+              </div>
+
+
+              <ion-item ng-repeat="recette in recettes | filter:searchQuery">
+
+                  <div class="list card">
+
+                      <div class="item item-avatar">
+                          <h2>Nom : {{recette.recettename}}</h2>
+                          <p>Pour : {{recette.nbPers}} personne(s)</p>
+                      </div>
+
+                      <div class="item item-body">
+
+                          <p>Cliquez pour voir les détails !</p>
+
+                          <p>
+                              <a class="subdued">Difficulté : {{recette.diff}}</a>
+                              <a class="subdued">Temps : {{recette.temps}} min</a>
+                          </p>
+
+                          <p>
+                              <a class="subdued">Type : {{recette.genre}}</a><br>
+                              <a class="subdued">{{recette.sucsal}}</a>
+                          </p>
+
+                          <p>
+                              <a class="subdued">{{recette.faim}}</a>
+                          </p>
+
+                          <p>
+                              <a class="subdued">Alcool ? {{recette.alcool}} -</a>
+                              <a class="subdued">Autres : {{recette.autres}} </a>
+                          </p>
+
+                          <button class="button button-vert">Votez</button>
+                          <button class="button button-verte" disabled>{{ recette.vote }}</button>
+
+                      </div>
+
+                  </div>
+
+              </ion-item>
+
+
+          </div>
 
       </ion-content>
 

@@ -117,6 +117,14 @@
 	border: 1px solid #9fcb14;
 }
 
+#rech-btns {
+	display: block;
+}
+
+#rechrech {
+	display: none;
+}
+
 
 
 
