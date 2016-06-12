@@ -8,11 +8,11 @@
       <ion-content ng-controller="ListCtrl">
 
 
-        <h1 class="bouche-trou">&nbsp;</h1>
-        <p class="rech-text padding">Recherchez vos recettes préférées en choisissant le tag de votre choix !</p>
 
+          <h1 class="bouche-trou">&nbsp;</h1>
+          <p class="rech-text padding">Recherchez vos recettes préférées en choisissant le tag de votre choix !</p>
        
-        <div id="rech-btns" class="padding" ng-model="searchQuery" ng-controller="RechCtrl">
+        <!--<div id="rech-btns" class="padding" ng-model="searchQuery" ng-controller="RechCtrl">
 
               <button class="button button-outline button-balanced espace rech-text" ng-click="showDiv('Facile')">
                 Facile
@@ -110,25 +110,40 @@
             <p>&nbsp;</p>
             <p>&nbsp;</p>
 
-        </div>
+        </div>-->
 
-          <div id="rechrech" ng-controler="RechHideCtrl">
 
-              <label class="item item-input">
-                  <i class="icon ion-search placeholder-icon"></i>
-                  <input type="search" placeholder="search" ng-model="searchQuery"/>
+
+
+              <label class="item item-input item-select">
+                  <i class="icon ion-search placeholder-icon" ></i>
+
+                  <select ng-model="searchQuery" style="text-align: left;" ng-controller="RechCtrl" >
+                      <option ng-click="showDiv()">Facile</option>
+                      <option selected>Green</option>
+                      <option>Red</option>
+                  </select>
+
+                  <!-- <input id="paramrech" type="search" ng-model="searchQuery" placeholder="Recherche..."> -->
+
+                  <!--  <textarea ng-model="searchQuery" id="paramrech"></textarea>
+
+                    <input type="text" text="facile" ng-model="searchQuery">-->
+
               </label>
 
-              <div class="padding">
-                  <button id="paramrech" class="button button-outline button-balanced espace rech-text">
 
+
+             <!-- <div class="padding">
+                  <button  class="button button-outline button-balanced espace rech-text" id="paramrech" >
+                    >
                   </button>
-              </div>
-
+              </div>  -->
+          <div id="rechrech">
 
               <ion-item ng-repeat="recette in recettes | filter:searchQuery">
 
-                  <div class="list card">
+                  <div class="list card"  ui-sref="single-rec" ng-click="single(single)">
 
                       <div class="item item-avatar">
                           <h2>Nom : {{recette.recettename}}</h2>
@@ -175,7 +190,7 @@
       <!-- NE PAS TOUCHER LE MENU CI-DESSOUS -->
 
       <div class="tabs tabs-icon-top">
-        <a class="tab-item balanced active" ui-sref="rech">
+        <a class="tab-item balanced active" ui-sref="liste-tag">
           <i class="icon ion-ios-search"></i>
           Recherche
         </a>

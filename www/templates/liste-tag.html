@@ -9,7 +9,7 @@
 
         <h1 class="bouche-trou">&nbsp;</h1>
 
-
+        <p class="rech-text padding">Recherchez vos recettes préférées en choisissant le tag de votre choix !</p>
 
 
         <label class="item item-input item-select">
@@ -49,7 +49,7 @@
 
         <ion-item ng-repeat="recette in recettes | filter:searchQuery">
 
-          <div class="list card">
+          <div class="list card" ui-sref="single-rec" ng-click="single(single)">
 
             <div class="item item-avatar">
               <h2>Nom : {{recette.recettename}}</h2>
@@ -97,7 +97,7 @@
       <!-- NE PAS TOUCHER LE MENU CI-DESSOUS -->
 
       <div class="tabs tabs-icon-top">
-        <a class="tab-item balanced active" ui-sref="rech">
+        <a class="tab-item balanced active" ui-sref="liste-tag">
           <i class="icon ion-ios-search"></i>
           Recherche
         </a>

@@ -1,7 +1,7 @@
 <ion-view title="single-rec" ng-controller="SingleController">
 
-  <div class="bar bar-header bar-jaune">
-    <button class="button button-icon icon ion-ios-arrow-left" ui-sref="liste" style="color: white;"> Retour</button>
+  <div class="bar bar-header bar-jaune" ng-controller="BackCtrl">
+    <button class="button button-icon icon ion-ios-arrow-left" style="color: white;" ng-click="myGoBack()"> Retour</button>
     <h1 class="title">TASTE!T</h1>
   </div>
 
@@ -109,7 +109,7 @@
       <!-- NE PAS TOUCHER LE MENU CI-DESSOUS -->
 
       <div class="tabs tabs-icon-top">
-        <a class="tab-item" ui-sref="rech">
+        <a class="tab-item" ui-sref="liste-tag">
           <i class="icon ion-ios-search"></i>
           Recherche
         </a>

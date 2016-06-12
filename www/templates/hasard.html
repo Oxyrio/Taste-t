@@ -3,12 +3,17 @@
 
   <div class="bar bar-header bar-vert">
     <h1 class="title">TASTE!T</h1>
-    <button class="button button-icon ion-plus" ui-sref="add-recipe"></button>
   </div>
 
       <ion-content>
 
         <h1>Recette au hasard</h1>
+        &nbsp;
+
+        <div ng-controller="DateCtrl" style="text-align: center">
+          Nous sommes le {{date | date:'dd/MM/yyyy'}}
+        </div>
+
         &nbsp;
 
         <p class="titre-gauche" id="hasardtitre">Jetez les dés !</p>
@@ -37,7 +42,7 @@
       <!-- NE PAS TOUCHER LE MENU CI-DESSOUS -->
 
       <div class="tabs tabs-icon-top">
-        <a class="tab-item" ui-sref="rech">
+        <a class="tab-item" ui-sref="liste-tag">
           <i class="icon ion-ios-search"></i>
           Recherche
         </a>

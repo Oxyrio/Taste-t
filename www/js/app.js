@@ -284,11 +284,11 @@ AuthDataResolver.$inject = ['Auth'];*/
 // FONCTIONS POUR RECHERCHE
 
 .controller('RechCtrl', function ($scope) {
-  $scope.showDiv = function (param) {
-    document.getElementById('rech-btns').style.display = "none";
-    document.getElementById('rechrech').style.display = "block";
+  $scope.showDiv = function () {
+    //document.getElementById('rech-btns').style.display = "none"; so when we click, this disappear
+    document.getElementById('rechrech').style.display = "block"; //this appear
 
-    document.getElementById("paramrech").innerHTML = param;
+    //document.getElementById("paramrech").innerHTML = param; and here I don't know what to do to change what I want
   };
 
 })
@@ -301,7 +301,21 @@ AuthDataResolver.$inject = ['Auth'];*/
   };
   
 })    */
-    
+
+
+// FONCTION BACK
+
+.controller('BackCtrl', function ($scope, $ionicHistory) {
+  $scope.myGoBack = function () {
+    $ionicHistory.goBack();
+  };
+})
+
+// FONCTION DATE POUR DAILY
+
+.controller('DateCtrl', ['$scope', function ($scope) {
+  $scope.date = new Date();
+}])    
 
 // FONCTION POUR DAILY / HASARD
 
