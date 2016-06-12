@@ -25,19 +25,19 @@
 
 
 
-                     <div ng-show="authData">  POUR FACEBOOK
+                     <div ng-show="authData">
                          <p>{{ authData.facebook.displayName }}</p>
                          <button class="button button-calm" ng-click="auth.$unauth()" ui-sref="login">Logout</button>
                      </div>
 
 
-                    <div ng-show="authData">  POUR GOOGLE
+                    <div ng-show="authData">
                         <p>{{ authData.google.displayName }}</p>
                         <button class="button button-calm" ng-click="auth.$unauth()" ui-sref="login">Logout</button>
                     </div>
 
 
-                <div ng-show="authData">  POUR TWITTER
+                <div ng-show="authData">
                         <p>{{ authData.twitter.displayName }}</p>
                         <button class="button button-calm" ng-click="auth.$unauth()" ui-sref="login">Logout</button>
                     </div>

@@ -180,6 +180,11 @@
 
 
 
+.burger:active {
+	background-color: #ffb90d;
+	border-color: #ffb90d;
+}
+
 h3{
 	font-size: 15px;
 	font-family: "DK Lemon Yellow Sun";
@@ -373,4 +378,17 @@ u{
 	background-color: white;
 	border: solid 1px white;
 	margin-bottom: 50px;
+}
+
+/* Geolocalisation */
+
+.scroll {
+	height: 100%;
+}
+
+#map {
+	width: 90%;
+	height: 50%;
+	margin-left: 5%;
+	margin-right: 5%;
 }

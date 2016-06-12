@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-var exemple = angular.module('starter', ['ionic', 'firebase']);
+var exemple = angular.module('starter', ['ionic', 'firebase', 'ngCordova']);
 
 var fb = null;
 
@@ -88,7 +88,8 @@ AuthDataResolver.$inject = ['Auth'];*/
 
     .state('contact', {
     url: '/contact',
-    templateUrl: 'templates/contact.html'        
+    templateUrl: 'templates/contact.html',
+    controller: 'MapCtrl'
   })
 
   .state('login', {
@@ -113,12 +114,6 @@ AuthDataResolver.$inject = ['Auth'];*/
     url: '/single-rec/:recId',
     templateUrl: 'templates/single-rec.html'/*,
     controller: 'RecDetailCtrl'*/
-  })
-
-  .state('add-recipe', {
-    url: '/add-recipe',
-    templateUrl: 'templates/add-recipe.html',
-    controller: 'SampleCtrl'
   })
 
   .state('test-content', {
@@ -150,24 +145,6 @@ AuthDataResolver.$inject = ['Auth'];*/
       alert("ERROR: " + error);
     });
   };
-
-  $scope.register = function(username, password) {
-    var fbAuth = $firebaseAuth(fb);
-    fbAuth.$createUser({
-      email: username,
-      password: password
-    }).then(function() {
-      return fbAuth.$authWithPassword({
-        email: username,
-        password: password
-      });
-    }).then(function(authData) {
-      $location.path("/home");
-    }).catch(function(error) {
-      alert("ERROR " + error);
-    });
-  };
-
 })
 
     /* se connecter via réseaux sociaux
@@ -220,22 +197,13 @@ AuthDataResolver.$inject = ['Auth'];*/
   return $firebaseArray(itemsRef);
 }])
 
-.controller('ListCtrl', function($scope, Items, $state, mySingle) {
+.controller('ListCtrl', function($scope, Items, $state, mySingle, Auth) {
   $scope.items = Items;
-
-  $scope.addItem = function() {
-    var name = prompt('Ajoutez votre recette !!');
-    if (name) {
-      $scope.items.$add({
-        'name': name
-      });
-    }
-  };
 
   $scope.single = function(){
     single = this.recette;
     mySingle.set(single);
-  }
+  };
 
 })
 
@@ -277,7 +245,6 @@ AuthDataResolver.$inject = ['Auth'];*/
       "vote": vote,
       "id": id
     });
-
   };
 })
     
@@ -563,7 +530,7 @@ AuthDataResolver.$inject = ['Auth'];*/
       console.log("The loading indicator is now hidden");
     });
   };
-});
+})
 
 
 
@@ -622,3 +589,43 @@ angular.module('SwaltyApp').controller('RecipeController', function($scope, Reci
     });
 
 */
+
+// Geolocalisation
+
+.controller('MapCtrl', function($scope, $state, $cordovaGeolocation) {
+  var options = {timeout: 10000, enableHighAccuracy: true};
+
+  $cordovaGeolocation.getCurrentPosition(options).then(function (position) {
+
+    var latLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+
+    var mapOptions = {
+      center: latLng,
+      zoom: 15,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+  }, function (error) {
+    console.log("Could not get location");
+
+    google.maps.event.addListenerOnce($scope.map, 'idle', function () {
+
+      var marker = new google.maps.Marker({
+        map: $scope.map,
+        animation: google.maps.Animation.DROP,
+        position: latLng
+      });
+
+      var infoWindow = new google.maps.InfoWindow({
+        content: "Here I am!"
+      });
+
+      google.maps.event.addListener(marker, 'click', function () {
+        infoWindow.open($scope.map, marker);
+      });
+
+    })
+  })
+});
