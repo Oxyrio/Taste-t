@@ -406,9 +406,20 @@ AuthDataResolver.$inject = ['Auth'];*/
         diff = "Facile";
         break;
       case 7:
-        plat = "Steak Frites";
-        desc = "";
-        ingr = "";
+        plat = "Cuillère appéritive : purée de poivron et fromage de chèvre";
+        desc = "Préparez le coulis de poivron : lavez, épépinez les poivrons et coupez-les en 2. <br>" +
+            "Faites-les revenir sous le gril (côté peau vers le dessus), jusqu'à ce que la peau soit noire. <br>" +
+            "Vous pouvez ainsi facilement les éplucher.<br>" +
+            "Une fois épluchés, mixez les poivrons afin d'obtenir un coulis de poivron.<br>" +
+            "Mélangez le fromage de chèvre avec de l'huile d'olive, du jus de citron, de la ciboulette fraîche ciselée puis assaisonnez.<br>" +
+            "Dans des cuillères (ou des verrines), disposez moitié-moitié de coulis de poivron et de préparation de fromage de chèvre.";
+        ingr = "- 1 poivron rouge <br>" +
+        "- 100g de fromage de chèvre frais <br>" +
+        "- De l'huile d'olive <br>" +
+        "- 1 jus de citron <br>" +
+        "- De la ciboulette <br>" +
+        "- Du sel <br>" +
+        "- Du poivre";
         diff = "Facile";
         break;
       case 8:
@@ -489,8 +500,30 @@ AuthDataResolver.$inject = ['Auth'];*/
         break;
       case 11:
         plat = "Cupcake";
-        desc = "desc 12";
-        ingr = "";
+        desc = "Travailler le beurre ramolli et le sucre jusqu'à obtenir une préparation crémeuse. <br>" +
+            "Ajouter l'oeuf entier, l'extrait de vanille et la crème entière. Mélanger.<br>" +
+            "Ajouter petit à petite la farine, préalablement mélangée avec le bicarbonate, la levure et le sel. <br>" +
+            "Vous devez obtenir une pâte légèrement collante. <br>" +
+            "Répartir dans des petits moules en papier sulfurisé (ou dans un moule à muffins). <br>" +
+            "Attention, ne pas remplir plus de la moitié de la hauteur, sinon ça débordera à la cuisson !<br>" +
+            "Enfourner 25 minutes à 180°C (thermostat 6). <br>" +
+            "A la fin de la cuisson, la lame d'un couteau doit ressortir sèche. <br>" +
+            "A l'aide d'un fouet électrique, battre le beurre ramolli en y ajoutant progressivement le sucre glace pour obtenir une crème au beurre. <br>" +
+            "Ajouter l'extrait de vanille. <br>" +
+            "Recouvrir le sommet des cupcakes de crème au beurre.";
+        ingr = "75g de beurre <br>" +
+        "135g de sucre <br>" +
+        "1 oeuf <br>" +
+        "1 cuillère à café d'extrait de vanille <br>" +
+        "20 cl de crème épaisse <br>" +
+        "150g de farine <br>" +
+        "1 cuillère à café rase de bicarbonate <br>" +
+        "1 cuillère à café rase de levure chimique <br>" +
+        "1 pincée de sel <br>" +
+        "Glaçage (crème au beurre) : <br>" +
+        "60g de beurre <br>" +
+        "30g de sucre glace <br>" +
+        "2 cuillères à café d'extrait de vanille";
         diff = "Moyen";
         break;
       case 12:
@@ -762,7 +795,16 @@ AuthDataResolver.$inject = ['Auth'];*/
         break;
       case 27:
         plat = "Tarte aux pommes";
-        desc = "desc 28";
+        desc = "Étalez votre pâte sur votre moule à tarte et piquez la pâte à l'aide d'une fourchette. <br>" +
+            "Épluchez les pommes, coupez les en deux et enlevez les trognons. <br>" +
+            "Coupez ensuite la moitié de la pomme en lamelle et disposez la sur la pâte à la verticale. <br>" +
+            "Faites de même pour toutes les pommes. <br>" +
+            "Coupez ensuite les 40 g de beurre en morceaux que vous disposez sur les pommes, coupez puis ajoutez les 40 g de sucre. <br>" +
+            "Mettez au four à 200°C durant 30 minutes environ.";
+        ingr = "- 1 pâte brisée ou feuilletée <br>" +
+        "- 7 ou 8 pommes <br>" +
+        "- 40g de sucre <br>" +
+        "- 40g de beurre";
         diff = "Facile";
         break;
       case 28:
@@ -781,21 +823,67 @@ AuthDataResolver.$inject = ['Auth'];*/
         diff = "Moyen";
         break;
       case 29:
-        plat = "Saumon fumé - Asperges";
-        desc = "desc 30";
-        ingr = "";
+        plat = "Spaghettis Bolognaise";
+        desc = "Dans une casserole, faites chauffer l'huile d'olive et jetez-y les oignons détaillés. <br>" +
+            "Faites-les cuire à feu doux le temps qu'ils deviennent translucides. <br>" +
+            "Ajoutez l'ail détaillé à la fin juste le temps qu'il dore très légèrement sans qu'il ne brûle. <br>" +
+            "Mettez les tomates dans la casserole et portez sur feu moyen à fort. <br>" +
+            "Laissez mijoter 20 minutes en ajoutant l'origan, le basilic, le sel, le poivre, le piment de Cayenne et le sucre selon les goûts. <br>" +
+            "Baissez le feu en remuant pour faire réduire la sauce. Réservez. <br>" +
+            "Faites cuire la viande dans une poêle après l'avoir assaisonnée. <br>" +
+            "Pensez à bien retirer le jus de la viande.<br>" +
+            "Mélangez la viande à la sauce et mélangez le tout aux pâtes cuites al dente.";
+        ingr = "- 600g de viande de boeuf hachée <br>" +
+        "- 1 boîte de tomates pelées de 800g environ <br>" +
+        "- 2 oignons <br>" +
+        "- 2 gousses d'ail <br>" +
+        "- 2 cuillères à soupe d'huile d'olive <br>" +
+        "- 1 cuillère à soupe d'origan <br>" +
+        "- Quelques feuilles de basilic <br>" +
+        "- 2 à 3 morceaux de sucre <br>" +
+        "- Du piment de Cayenne <br>" +
+        "- Du sel  <br>" +
+        "- Du poivre <br>" +
+        "- 400g de spaghettis";
         diff = "Facile";
         break;
       case 30:
-        plat = "Spaghetti à la bolognaise";
-        desc = "desc 31";
-        ingr = "";
-        diff = "Facile";
+        plat = "Verrine de saumon fumé et ricotta";
+        desc = "Détaillez en lamelles puis en petits rectangles le saumon fumé. <br>" +
+            "Ciselez la ciboulette ainsi que l'aneth.<br>" +
+            "Mélangez dans un bol le jus de citron, la ricotta, la crème fraîche, les herbes. <br>" +
+            "Si vous le souhaitez, poivrez un peu. <br>" +
+            "Ajoutez le saumon fumé en en gardant pour le décor. <br>" +
+            "Mélangez bien." +
+            "A l'aide d'une poche à douille à embout large, remplissez les verres à cocktail de la préparation. <br>" +
+            "C'est ce qui fait l'élégance de la verrine. <br>" +
+            "Puis terminez par deux rectangles de saumon fumé et une pluche d'aneth. " +
+            "<br>Servez !!";
+        ingr = "Pour 4 verres à vodka : <br>" +
+        "- 1 tranche de saumon fumé <br>" +
+        "- 2 cuillères à soupe de crème fraîche <br>" +
+        "- 3 cuillères à soupe de ricotta <br>" +
+        "- Une vingtaine de brins de ciboulette <br>" +
+        "- 5 branches d'aneth <br>" +
+        "- 1/4 de jus de citron";
+        diff = "Difficile";
         break;
       case 31:
-        plat = "Île flottante";
-        desc = "desc 32";
-        ingr = "";
+        plat = "Îles flottantes";
+        desc = "Séparez les blancs d'oeufs des jaunes. <br>" +
+            "Montez les blancs en neige bien ferme en y ajoutant une pincée de sel, puis 70g de sucre. <br>" +
+            "Faites frémir le lait et la vanille, et plongez-y les quenelles de blancs battus réalisées à l'aide de deux cuillères. <br>" +
+            "Laissez-les pocher 1 à 2 minutes en les retournant, puis sortez-les à l'écumoire et posez-les sur du papier absorbant.<br>" +
+            "Battez les jaunes d'oeufs et le reste du sucre (100g) jusqu'à ce que le mélange blanchisse et soit mousseux. <br>" +
+            "Mélangez cet appareil au lait (auquel vous avez retirez la gousse de vanille) en fouettant énergiquement. <br>" +
+            "Sans jamais arriver à ébullition, chauffez à feu doux en remuant jusqu'à ce que la crème épaississe et nappe le dos d'une cuillère en bois. <br>" +
+            "Une fois que la crème est à consistance, transvasez-la dans un plat de service ou un saladier pour que la cuisson s'arrête.<br>" +
+            "Versez les 50g de sucre restants dans une casserole et faites chauffer à feu doux jusqu'à obtention d'un caramel (vous pouvez également utiliser du caramel déjà prêt).";
+        ingr = "- 6 oeufs <br>" +
+        "- 1/2 litre de lait <br>" +
+        "- 170g de sucre + 50 g pour le caramel <br>" +
+        "- Une gousse de vanille <br>" +
+        "- Une pincée de sel";
         diff = "Moyen";
         break;
 
