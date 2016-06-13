@@ -261,7 +261,7 @@ AuthDataResolver.$inject = ['Auth'];*/
     alcool = this.alcool;
     autres = this.autres;
     vote = 0;
-    id = Math.floor((Math.random() * 100000));
+
 
     $scope.recettes.$add({
       "recettename": recettename,
@@ -274,8 +274,7 @@ AuthDataResolver.$inject = ['Auth'];*/
       "faim": faim,
       "alcool": alcool,
       "autres": autres,
-      "vote": vote,
-      "id": id
+      "vote": vote
     });
 
   };

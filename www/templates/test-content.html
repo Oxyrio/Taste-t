@@ -126,16 +126,25 @@
                 </select>
               </label>
 
+              <p>&nbsp;</p>
+
+              <div ng-controller="DateCtrl" style="text-align: center">
+                Date de création : {{date | date:'dd/MM/yyyy'}} à {{ date | date :'HH:mm'}}
+              </div>
 
 
             </div>
 
-            <br><br>
+
             <div style="text-align:center;">
               <button class="button button-energized" type="submit" ng-click="addRecette()" ui-sref="liste">
                   Ajouter la recette
               </button>
             </div>
+
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
+          <p>&nbsp;</p>
 
         </form>
 
