@@ -14,7 +14,7 @@
 }
 
 .vert {
-	height: 470px;
+	height: 400px;
 	width: 27%;
 	background-image: url(../img/fond-has.jpg);
 	background-size: cover;
@@ -24,7 +24,7 @@
 }
 
 .jaune {
-	height: 470px;
+	height: 400px;
 	width: 27%;
 	background-image: url(../img/fond-liste.jpg);
 	background-size: cover;
@@ -34,7 +34,7 @@
 }
 
 .rouge {
-	height: 470px;
+	height: 400px;
 	width: 27%;
 	background-image: url(../img/fond-base.jpg);
 	background-size: cover;
