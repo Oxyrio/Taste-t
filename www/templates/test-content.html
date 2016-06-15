@@ -1,6 +1,7 @@
 <ion-view view-title="test-content">
 
-<div class="bar bar-header bar-jaune">
+<div class="bar bar-header bar-jaune" ng-controller="BackCtrl">
+  <button class="button button-icon icon ion-ios-arrow-left" style="color: white;" ng-click="myGoBack()"> Retour</button>
   <h1 class="title">TASTE!T</h1>
 </div>
 
@@ -167,9 +168,9 @@
           <i class="icon ion-ios-home"></i>
           Accueil
         </a>
-        <a class="tab-item" ui-sref="tend">
-          <i class="icon ion-ios-star"></i>
-          Tendances
+        <a class="tab-item" ui-sref="bases">
+          <i class="icon ion-university"></i>
+          Bases
         </a>
         <a class="tab-item" ui-sref="contact">
           <i class="icon ion-ios-email"></i>
